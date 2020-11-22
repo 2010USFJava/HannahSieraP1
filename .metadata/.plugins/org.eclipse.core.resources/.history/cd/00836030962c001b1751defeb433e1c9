@@ -1,0 +1,48 @@
+package com.revature.dao;
+
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+
+import com.revature.beans.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+
+	public Employee getEmployeeByID(int ID) throws SQLException {
+		Connection conn =cf.getConnection();
+		String sql= "select * from customers where username=?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1,  username);
+		ResultSet rs= ps.executeQuery();
+		Customer c= null;
+		while(rs.next()) {
+			c= new Employee(rs.getString(1),rs.getString(3),rs.getString(3),rs.getString(4),rs.getInt(5));
+		}
+		return c;
+	}
+	}
+
+	public List<Employee> getEmployees() throws SQLException {
+		List<Employee> employeeList= new ArrayList<Employee>();
+		Connection conn= cf.getConnection();
+		Statement stmt= conn.createStatement();
+		ResultSet rs= stmt.executeQuery("select * from employees;");
+		Employee e= null;
+		while(rs.next()) {
+			e= new Employee(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5));
+			employeeList.add(c);
+		}
+		return employeeList;
+	}
+
+	public Employee updateEmployee() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
