@@ -17,7 +17,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>EmployeeLogin</servlet-name>
-    <url-pattern>/EmployeeLogin</url-pattern>
+    <url-pattern>/employeelogin</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -27,6 +27,16 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>EmployeeLoginServlet</servlet-name>
-    <url-pattern>/employeelogin</url-pattern>
+      <url-pattern>*.change</url-pattern>
+  <url-pattern>/api/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>JSONServlet</servlet-name>
+  <servlet-class>com.revature.servlet.JSONServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>JSONServlet</servlet-name>
+  <url-pattern>*.json</url-pattern>
+
   </servlet-mapping>
 </web-app>

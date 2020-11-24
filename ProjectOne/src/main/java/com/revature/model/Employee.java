@@ -1,4 +1,4 @@
-package com.revature.beans;
+package com.revature.model;
 
 public class Employee {
 	
@@ -6,19 +6,12 @@ public class Employee {
 	public String lastName;
 	public String username;
 	public String password;
-	public String empID;
+	public int empID;
 	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Employee(String firstName, String lastName, String username, String password, String empID) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.username = username;
-		this.password = password;
-		this.empID = empID;
-	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -43,10 +36,10 @@ public class Employee {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getEmpID() {
+	public int getEmpID() {
 		return empID;
 	}
-	public void setEmpID(String empID) {
+	public void setEmpID(int empID) {
 		this.empID = empID;
 	}
 	@Override
@@ -54,7 +47,14 @@ public class Employee {
 		return "Employee [firstName=" + firstName + ", lastName=" + lastName + ", username=" + username + ", password="
 				+ password + ", empID=" + empID + "]";
 	}
-	
+	public Employee(String firstName, String lastName, String username, String password, int empID) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = username;
+		this.password = password;
+		this.empID = empID;
+	}
 	
 
 }
