@@ -23,7 +23,7 @@ public class LoginController {
 			
 		} else {
 			req.getSession().setAttribute("currentemp", emp);
-			return "home.change";
+			return "profile.change";
 		}
 	}
 

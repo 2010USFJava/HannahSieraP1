@@ -20,7 +20,7 @@ public class RequestHelper {
 			
 		case "/ProjectOne/profile.change":
 		System.out.println("in profile.change rhelper");
-		return ProfileController.home(req);
+		return ProfileController.profile(req);
 		
 		default:
 			System.out.println("in default case");

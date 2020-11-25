@@ -4,10 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 
 public class ProfileController {
 
-	public ProfileController() {
-		// TODO Auto-generated constructor stub
-	}
-public static String home(HttpServletRequest req) {
+	
+public static String profile(HttpServletRequest req) {
 	return "resources/html/profile.html";
 	
 
