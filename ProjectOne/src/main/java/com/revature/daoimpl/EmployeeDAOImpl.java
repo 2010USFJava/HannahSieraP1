@@ -19,7 +19,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		Employee emp = new Employee();
 		try {
 			Connection conn = cf.getConnection();
-			String sql = "SELECT * FROM Employee WHERE employee_id = ?";
+			String sql = "SELECT * FROM Employee WHERE emp_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
@@ -44,7 +44,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		List<Employee> eList = new ArrayList<Employee>();
 		try {
 			Connection conn = cf.getConnection();
-			String sql = "SELECT * FROM employee";
+			String sql = "SELECT * FROM Employee";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
