@@ -2,14 +2,39 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Employee Profile</title>
+
+<title>Employee Home</title>
 </head>
 <body>
-
-	<div class="login-controller">
-		<h4>Employee Profile</h4>
+	<div class='container'>
+		<h1>EMPLOYEE PROFILE</h1>
 	</div>
-		
+
+	<div class="container" id='user'></div>
+	<br>
+	<div class='container'><a href="logout">Log out</a></div>
+	<br><br>
+
+		<button class="btn btn-info" id="employeeUpdate">Update
+			Personal Information</button>
+
+				<button type="submit" class="btn btn-primary">Submit</button>
+		<br> <br>
+
+		<div class="container">
+			<button class="btn btn-success" id="reimbursementView">View
+				Reimbursement Requests</button>
+		</div>
+
+		<br> <br>
+
+		<div class="container">
+			<button class="btn btn-danger" type='submit' id="reimbursementCreate">Submit
+				Reimbursement Request</button>
+		</div>
+		<div class='container' id='submitoccurred'></div>
+		<br> <br>
+
 <script type="text/javascript" src="resources/js/profile.js" ></script>
 </body>
 </html>

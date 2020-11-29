@@ -11,22 +11,12 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>EmployeeLogin</display-name>
-    <servlet-name>EmployeeLogin</servlet-name>
-    <servlet-class>com.revature.servlets.EmployeeLogin</servlet-class>
+    <display-name>MainServlet</display-name>
+    <servlet-name>MainServlet</servlet-name>
+    <servlet-class>com.revature.servlets.MainServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>EmployeeLogin</servlet-name>
-    <url-pattern>/employeelogin</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>EmployeeLoginServlet</display-name>
-    <servlet-name>EmployeeLoginServlet</servlet-name>
-    <servlet-class>com.revature.servlets.EmployeeLoginServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>EmployeeLoginServlet</servlet-name>
+    <servlet-name>MainServlet</servlet-name>
       <url-pattern>*.change</url-pattern>
   <url-pattern>/api/*</url-pattern>
   </servlet-mapping>
