@@ -1,0 +1,10 @@
+
+e
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ЫпЖџ8Юе€шб.HЩRMINORZ
+CODE_SMELL
+c
+java:S1128"+Remove this unused import 'java.util.List'.(Хл±Дшяяяя8Юе€шб.HЪRMINORZ
+CODE_SMELL
+i
+java:S1128"7Remove this unused import 'com.revature.model.Manager'.(вЁГ68Юе€шб.HЫRMINORZ
+CODE_SMELL

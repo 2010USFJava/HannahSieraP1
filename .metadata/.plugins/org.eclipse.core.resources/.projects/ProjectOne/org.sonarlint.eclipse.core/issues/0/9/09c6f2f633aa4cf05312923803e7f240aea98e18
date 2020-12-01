@@ -1,0 +1,7 @@
+
+h
+java:S2441"=Make "Manager" serializable or don't store it in the session.(ß‘À 8ÔÊñªá.HßRMAJORZBUG
+m
+java:S1118
+":Add a private constructor to hide the implicit public one.(¹ÖÀ¤8ÔÊñªá.HÞRMAJORZ
+CODE_SMELL

@@ -2126,3 +2126,15 @@ java.lang.NullPointerException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-01 10:58:51.273
 !MESSAGE executing callback sts4.classpath.AiNdoQiJ SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-01 11:01:15.822
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.AiNdoQiJ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-01 11:01:15.840
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.AiNdoQiJ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-01 11:01:15.849
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-01 11:01:15.860
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.AiNdoQiJ => OK

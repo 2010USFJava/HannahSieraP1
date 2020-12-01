@@ -1,0 +1,21 @@
+
+v
+java:S2095a"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÀÖÐ½HÂRBLOCKERZBUG
+v
+java:S20954"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÀÖÐ½HÃRBLOCKERZBUG
+v
+java:S2095J"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÀÖÐ½HÄRBLOCKERZBUG
+v
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÀÖÐ½HÅRBLOCKERZBUG
+T
+java:S1444"(Make this "public static cf" field final(­ë—ßHÆRMINORZ
+CODE_SMELL
+z
+java:S1104"NMake cf a static final constant or non-public and provide accessors if needed.(­ë—ßHÇRMINORZ
+CODE_SMELL
+Š
+java:S22930"YReplace the type specification in this constructor call with the diamond operator ("<>").(¿ÄïýüÿÿÿÿHÈRMINORZ
+CODE_SMELL
+b
+java:S1135A"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿHÉRINFOZ
+CODE_SMELL

@@ -1,4 +1,0 @@
-let testNum = 15;
-
-function asyncAlert(num){
-	for

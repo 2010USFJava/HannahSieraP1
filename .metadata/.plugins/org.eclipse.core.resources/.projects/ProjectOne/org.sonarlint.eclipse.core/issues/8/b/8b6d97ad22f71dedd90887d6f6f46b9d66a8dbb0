@@ -1,0 +1,7 @@
+
+m
+java:S1118":Add a private constructor to hide the implicit public one.( œˇÃ8∏ Ò™·.H‹RMAJORZ
+CODE_SMELL
+¿
+java:S1130"çRemove the declaration of thrown exception 'com.fasterxml.jackson.core.JsonProcessingException' which is a subclass of 'java.io.IOException'.(–ò¥k8∏ Ò™·.H›RMINORZ
+CODE_SMELL
