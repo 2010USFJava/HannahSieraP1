@@ -1,28 +1,0 @@
-
-b
-java:S1135"2Complete the task associated to this TODO comment.(ƒŠ® úÿÿÿÿHö
-RINFOZ
-CODE_SMELL
-k
-java:S1161":Add the "@Override" annotation above this method signature(Ïû©ÖûÿÿÿÿH÷
-RMAJORZ
-CODE_SMELL
-c	java:S106"9Replace this use of System.out or System.err by a logger.(ëëø.Hø
-RMAJORZ
-CODE_SMELL
-
-java:S1989"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ãìÄHù
-RMINORZVULNERABILITY
-f
-java:S1161%":Add the "@Override" annotation above this method signature(‹¨¯¿Hú
-RMAJORZ
-CODE_SMELL
-i	java:S106&"9Replace this use of System.out or System.err by a logger.(Å«åöùÿÿÿÿHû
-RMAJORZ
-CODE_SMELL
-•
-java:S1989("aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ş…ßáıÿÿÿÿHü
-RMINORZVULNERABILITY
-g	java:S125'"<This block of commented-out lines of code should be removed.(ÕâÙHı
-RMAJORZ
-CODE_SMELL

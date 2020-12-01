@@ -1,21 +1,0 @@
-
-ž
-java:S1989"hHandle the following exceptions that could be thrown by "process": JsonProcessingException, IOException.(«£ò¥8éý‰‘á.Hò
-RMINORZVULNERABILITY
-k
-java:S1161":Add the "@Override" annotation above this method signature(Ò¡Ñ¨ýÿÿÿÿHð
-RMAJORZ
-CODE_SMELL
-k	java:S106"9Replace this use of System.out or System.err by a logger.(€ºáÕ8éý‰‘á.Hñ
-RMAJORZ
-CODE_SMELL
-f
-java:S1161":Add the "@Override" annotation above this method signature(ÌŠë±Hï
-RMAJORZ
-CODE_SMELL
-p	java:S106"9Replace this use of System.out or System.err by a logger.(—þû øÿÿÿÿ8éý‰‘á.Hó
-RMAJORZ
-CODE_SMELL
-ž
-java:S1989"hHandle the following exceptions that could be thrown by "process": JsonProcessingException, IOException.(«£ò¥8éý‰‘á.Hô
-RMINORZVULNERABILITY
