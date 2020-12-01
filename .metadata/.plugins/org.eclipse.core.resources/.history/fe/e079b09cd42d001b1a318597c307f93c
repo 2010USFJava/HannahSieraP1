@@ -1,0 +1,7 @@
+let testNum = 15;
+
+function asyncAlert(num){
+	for(let i=0; i<10; i++){
+		console.log(num);
+	}
+}

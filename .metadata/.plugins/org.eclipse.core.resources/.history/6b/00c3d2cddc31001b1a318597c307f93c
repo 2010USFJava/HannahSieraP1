@@ -1,0 +1,14 @@
+package com.revature.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class EmployeeLoginHome {
+
+
+	public static String home(HttpServletRequest req) {
+		return "html/employeeloginHome.html";
+	}
+
+}
+
+

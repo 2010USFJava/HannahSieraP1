@@ -1,0 +1,12 @@
+
+ƒ
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(çÑšŸøÿÿÿÿ8®ı‰‘á.Hë
+RMINORZ
+CODE_SMELL
+r
+java:S1118":Add a private constructor to hide the implicit public one.(µòçÏşÿÿÿÿ8®ı‰‘á.Hì
+RMAJORZ
+CODE_SMELL
+Æ
+java:S1130"Remove the declaration of thrown exception 'com.fasterxml.jackson.core.JsonProcessingException' which is a subclass of 'java.io.IOException'.(‹üˆÿÿÿÿÿ8Şß¥á.HÒRMINORZ
+CODE_SMELL

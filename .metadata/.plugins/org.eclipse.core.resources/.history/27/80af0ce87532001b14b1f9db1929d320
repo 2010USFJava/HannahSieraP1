@@ -1,0 +1,102 @@
+package com.revature.daoimpl;
+
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.revature.dao.ManagerDao;
+import com.revature.model.Manager;
+import com.revature.util.ConnFactory;
+
+public class ManagerDaoImpl implements ManagerDao {
+	
+	public static ConnFactory cf = ConnFactory.getInstance();
+	@Override
+	public Manager getManagerByID(int id) throws SQLException {
+		Manager man = new Manager();
+		try {
+			Connection conn = cf.getConnection();
+			String sql = "SELECT * FROM Manager WHERE manid = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				man.setFirstName(rs.getString(1));
+				man.setLastName(rs.getString(2));
+				man.setUsername(rs.getString(3));
+				man.setPassword(rs.getString(4));
+				man.setManId(rs.getInt(5));
+				
+			}
+				
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return man;
+	}
+
+	@Override
+	public List<Manager> getManagers() throws SQLException {
+		List<Manager> mList = new ArrayList<Manager>();
+		try {
+			Connection conn = cf.getConnection();
+			String sql = "SELECT * FROM employee";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				mList.add(new Manager());
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return mList;
+	}
+
+	public Manager getManagerByUsername(String username) throws SQLException{
+		Manager man = new Manager();
+		try {
+			Connection conn = cf.getConnection();
+			String sql = "SELECT * FROM Manager WHERE username = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, username);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				man.setFirstName(rs.getString(1));
+				man.setLastName(rs.getString(2));
+				man.setUsername(rs.getString(3));
+				man.setPassword(rs.getString(4));
+				man.setManId(rs.getInt(5));
+				
+			}
+				
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return man;
+	}
+
+	@Override
+	public void addManager(Manager man) throws SQLException {
+		try {
+			Connection conn = cf.getConnection();
+			String sql = "INSERT INTO manager values(?,?,?,?,DEFAULT)";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, man.getFirstName());
+			ps.setString(2, man.getLastName());
+			ps.setString(3, man.getUsername());
+			ps.setString(4, man.getPassword());
+			ps.execute();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
+		
+	
+
+}

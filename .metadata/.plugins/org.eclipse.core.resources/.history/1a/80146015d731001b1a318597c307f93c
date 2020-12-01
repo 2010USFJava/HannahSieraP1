@@ -1,0 +1,86 @@
+package com.revature.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.revature.beans.Employee;
+
+public class EmployeeDao {
+	
+	static {
+		try {
+			Class.forName("org.postgresql.Driver");
+		}catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	private String url= "projectone.cagd9qgsp3uo.us-east-2.rds.amazonaws.com";
+	private String username = "projectone";
+	private String password = "2010usfjava";
+	
+	public List<Employee> getAllEmployees(){
+		List<Employee> employeeList = new ArrayList<Employee>();
+		try {
+			Connection conn = DriverManager.getConnection(this.url,this.username, this.password);
+			String sql = "SELECT * FROM employee";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				employeeList.add(new Employee(rs.getString(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5));
+				}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return employeeList;
+	}
+	
+	public void insertEmployee(Employee emp) {
+		try {
+			Connection conn = DriverManager.getConnection(this.url,this.username, this.password);
+			String sql = "INSERT INTO employee values(?,?,?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, emp.getFirstName());
+			ps.setString(2, emp.getLastName());
+			ps.setString(3, emp.getUsername());
+			ps.setString(4, emp.getPassword());
+			ps.execute();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public Employee getEmployeeByName(String name) {
+		Employee emp = new Employee();
+		try {
+			Connection conn = DriverManager.getConnection(this.url,this.username, this.password);
+			String sql = "SELECT * FROM employee WHERE first_name = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, name);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				emp.setFirstName(rs.getString(1));
+				emp.setLastName(rs.getString(2));
+				emp.setUsername(rs.getString(3));
+				emp.setPassword(rs.getString(4));
+			}
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return emp;
+	}
+
+	public EmployeeDao() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

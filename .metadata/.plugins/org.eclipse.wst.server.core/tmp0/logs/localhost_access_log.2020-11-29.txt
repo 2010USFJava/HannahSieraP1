@@ -1,0 +1,10 @@
+127.0.0.1 - - [29/Nov/2020:10:57:34 -0500] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [29/Nov/2020:10:57:36 -0500] "GET /webapp/WEB-INF/employeelogin.html HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [29/Nov/2020:10:58:38 -0500] "GET /webapp/WEB-INF/managerlogin.html HTTP/1.1" 404 682
+127.0.0.1 - - [29/Nov/2020:11:11:30 -0500] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [29/Nov/2020:11:11:31 -0500] "GET /ProjectOne/resources/html/employeelogin.html HTTP/1.1" 200 2208
+0:0:0:0:0:0:0:1 - - [29/Nov/2020:11:11:32 -0500] "GET /ProjectOne/resources/html/signin.css HTTP/1.1" 200 2692
+127.0.0.1 - - [29/Nov/2020:13:42:33 -0500] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [29/Nov/2020:13:43:20 -0500] "GET /ProjectOne/resources/html/employeelogin.html HTTP/1.1" 200 2244
+127.0.0.1 - - [29/Nov/2020:13:59:28 -0500] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [29/Nov/2020:13:59:28 -0500] "GET /ProjectOne/resources/html/managerlogin.html HTTP/1.1" 200 2197

@@ -1,0 +1,15 @@
+package com.revature.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.revature.model.Manager;
+
+public interface ManagerDao {
+
+	public List<Manager> getManagers() throws SQLException;
+	public void addManager(Manager man) throws SQLException;
+	public Manager getManagerByUsername(String username) throws SQLException;
+	public Manager getManagerByID(int id) throws SQLException;
+	
+}

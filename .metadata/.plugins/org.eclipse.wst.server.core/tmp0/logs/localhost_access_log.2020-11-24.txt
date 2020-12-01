@@ -1,0 +1,11 @@
+127.0.0.1 - - [24/Nov/2020:23:16:43 -0500] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [24/Nov/2020:23:16:45 -0500] "GET /ProjectOne/resources/html/employeelogin.html HTTP/1.1" 200 2208
+0:0:0:0:0:0:0:1 - - [24/Nov/2020:23:16:45 -0500] "GET /ProjectOne/resources/html/signin.css HTTP/1.1" 200 2692
+0:0:0:0:0:0:0:1 - - [24/Nov/2020:23:18:30 -0500] "GET /ProjectOne/resources/html/employeelogin.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Nov/2020:23:21:04 -0500] "GET /ProjectOne/resources/html/employeelogin.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Nov/2020:23:21:04 -0500] "GET /ProjectOne/resources/html/signin.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Nov/2020:23:21:04 -0500] "GET /ProjectOne/resources/html/employeelogin.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Nov/2020:23:21:04 -0500] "GET /ProjectOne/resources/html/signin.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Nov/2020:23:21:20 -0500] "GET /ProjectOne/resources/html/employeelogin.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Nov/2020:23:21:28 -0500] "GET /ProjectOne/resources/html/employeelogin.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Nov/2020:23:21:41 -0500] "GET /ProjectOne/resources/html/profile.html HTTP/1.1" 200 130
