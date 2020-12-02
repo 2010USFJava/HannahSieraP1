@@ -14,12 +14,18 @@ import com.revature.util.ConnFactory;
 public class EmployeeDAOImpl implements EmployeeDAO {
 	
 	public static ConnFactory cf = ConnFactory.getInstance();
+	static {
+		try { Class.forName("org.postgresql.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+	}
+	}
 	@Override
-	public Employee getEmployeeByID(int id) throws SQLException {
+	public Employee getEmployeeByID(int id) {
 		Employee emp = new Employee();
 		try {
 			Connection conn = cf.getConnection();
-			String sql = "SELECT * FROM Employee WHERE emp_id = ?";
+			String sql = "SELECT * FROM employee WHERE emp_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
@@ -40,15 +46,16 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	}
 
 	@Override
-	public List<Employee> getEmployees() throws SQLException {
+	public List<Employee> getEmployees() {
 		List<Employee> eList = new ArrayList<Employee>();
+
 		try {
 			Connection conn = cf.getConnection();
-			String sql = "SELECT * FROM Employee";
+			String sql = "SELECT * FROM employee";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
-				eList.add(new Employee());
+				eList.add(new Employee(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5)));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -57,14 +64,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	}
 
 	@Override
-	public Employee updateEmployee() throws SQLException {
-		// TODO Auto-generated method stub
+	public Employee updateEmployee() {
+
 		return null;
 	}
 	public void addEmployee(Employee emp) {
 		try {
 			Connection conn = cf.getConnection();
-			String sql = "INSERT INTO Employee values(?,?,?,?,DEFAULT)";
+			String sql = "INSERT INTO employee values(?,?,?,?,DEFAULT)";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, emp.getFirstName());
 			ps.setString(2, emp.getLastName());
@@ -76,11 +83,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		}
 	}
 
-	public Employee getEmployeeByUsername(String username) throws SQLException{
+	public Employee getEmployeeByUsername(String username) {
 		Employee emp = new Employee();
 		try {
 			Connection conn = cf.getConnection();
-			String sql = "SELECT * FROM Employee WHERE username = ?";
+			String sql = "SELECT * FROM employee WHERE username = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, username);
 			ResultSet rs = ps.executeQuery();

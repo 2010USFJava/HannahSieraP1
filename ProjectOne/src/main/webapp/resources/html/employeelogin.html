@@ -15,7 +15,6 @@
 <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 
 <link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
 
 
     <style>
@@ -40,20 +39,23 @@
 		
 <body class="text-center">
 
-    <form class="form-signin" action="/ProjectOne/profile.change">
+    <form method="POST" class="login-container" action="/ProjectOne/login.change">
     <h1 class="h3 mb-3 font-weight-normal">Employee Login</h1>
   <img class="mb-4" src="https://revature.com/wp-content/uploads/2017/08/rev-logo-2.png" alt="" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+ 
   <label for="inputUsername" class="sr-only">Username</label>
-  <input type="username" id="inputUsername" class="form-control" placeholder="Username" required="" autofocus="">
+  <input name="username" type="username" id="inputUsername" class="form-control" placeholder="username" required="" autofocus="">
+ 
   <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+  <input name="password" type="password" id="inputPassword" class="form-control" placeholder="password" required="">
+ 
   <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> Remember me
     </label>
   </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Sign in</button>
   
 </form>
 

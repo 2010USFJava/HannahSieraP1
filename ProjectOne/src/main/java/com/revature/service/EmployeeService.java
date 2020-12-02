@@ -1,15 +1,17 @@
 package com.revature.service;
 
-import java.sql.SQLException;
+
 import java.util.List;
 
+import com.revature.dao.EmployeeDAO;
 import com.revature.daoimpl.EmployeeDAOImpl;
 import com.revature.model.Employee;
 
 public class EmployeeService {
 
-		EmployeeDAOImpl edao = new EmployeeDAOImpl();
-		public boolean loginVerify(String username, String password) throws SQLException{
+		EmployeeDAO edao = new EmployeeDAOImpl();
+		
+		public boolean loginVerify(String username, String password){
 			List<Employee> eList= edao.getEmployees();
 			boolean verify = false;
 			for(Employee emp: eList) {
@@ -17,11 +19,12 @@ public class EmployeeService {
 					verify = true;
 				}
 			}
+			System.out.println(verify);
 			return verify;
 			
 		}
 		
-		public Employee loginGetEmployee(String username, String password) throws SQLException{
+		public Employee loginGetEmployee(String username, String password){
 			
 			if(loginVerify(username,password)) {
 				return edao.getEmployeeByUsername(username);
@@ -32,9 +35,7 @@ public class EmployeeService {
 		public void addEmployee(Employee emp) {
 			edao.addEmployee(emp);
 		}
-		public EmployeeService() {
-			// TODO Auto-generated constructor stub
-		}
+
 
 	}
 

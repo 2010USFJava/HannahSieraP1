@@ -6,13 +6,13 @@
 <title>Employee Home</title>
 </head>
 <body>
-	<div class='container'>
+	<div class='conatiner'>
 		<h1>EMPLOYEE PROFILE</h1>
 	</div>
 
 	<div class="container" id='user'></div>
 	<br>
-	<div class='container'><a href="logout">Log out</a></div>
+	<div class='container'><a href="/ProjectOne/login.change">Log out</a></div>
 	<br><br>
 
 		<button class="btn btn-info" id="employeeUpdate">Update
@@ -27,12 +27,13 @@
 		</div>
 
 		<br> <br>
-
+	<form  action="/ProjectOne/reimbursement.change">
 		<div class="container">
 			<button class="btn btn-danger" type='submit' id="reimbursementCreate">Submit
 				Reimbursement Request</button>
 		</div>
 		<div class='container' id='submitoccurred'></div>
+		</form>
 		<br> <br>
 
 <script type="text/javascript" src="resources/js/profile.js" ></script>

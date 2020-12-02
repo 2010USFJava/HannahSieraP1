@@ -1,6 +1,6 @@
 package com.revature.controller;
 
-import java.sql.SQLException;
+
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,7 +10,8 @@ import com.revature.service.EmployeeService;
 public class LoginController {
 
 	static EmployeeService eServ = new EmployeeService();
-	public static String login(HttpServletRequest req) throws SQLException {
+	
+	public static String login(HttpServletRequest req) {
 		if(!req.getMethod().equals("POST")) {
 			return "resources/html/employeelogin.html";
 			
