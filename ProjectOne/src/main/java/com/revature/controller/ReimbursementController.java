@@ -9,4 +9,7 @@ public class ReimbursementController {
 		
 
 	}
+	public static String viewreimbursement(HttpServletRequest req) {
+		return "resources/html/viewreimbursement.html";
+	}
 }

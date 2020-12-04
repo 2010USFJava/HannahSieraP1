@@ -1,0 +1,123 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>View Reimbursements</title>
+<meta name="viewport" contents="user-scalable=no,width=device-width" />
+<link rel="stylesheet" type="text/css" href="profile.css">
+</head>
+
+<body style="margin: 30px">
+	<div class="container">
+		<div class="row">
+			<form>
+				<fieldset>
+					<legend>Reimbursements</legend>
+					<input type="text" class="form-control" name="empid"
+						value="Enter Employee ID">
+					<button type="button" id="search" class="btn btn-success">Search</button>
+				</fieldset>
+			</form>
+			
+
+<h1>List of all reimbursements in the table</h1>
+<?php
+$db = pg_connect("host=localhost port=5432 dbname=projectone user=projectone password=2010usfjava");
+$result = pg_query($db,"SELECT * FROM reimbursement");
+echo "<table>";
+while($row=pg_fetch_assoc($result)){echo "<tr>";
+echo "<td align='center' width='200'>" . $row['employee_id'] . "</td>";
+echo "<td align='center' width='200'>" . $row['reimbursement_id'] . "</td>";
+echo "<td align='center' width='200'>" . $row['event_date'] . "</td>";
+echo "<td align='center' width='200'>" . $row['request_date'] . "</td>";
+echo "<td align='center' width='200'>" . $row['location'] . "</td>";
+echo "<td align='center' width='200'>" . $row['amount'] . "</td>";
+echo "<td align='center' width='200'>" . $row['description'] . "</td>";
+echo "<td align='center' width='200'>" . $row['event_type'] . "</td>";
+echo "<td align='center' width='200'>" . $row['grade_type'] . "</td>";
+echo "<td align='center' width='200'>" . $row['status'] . "</td>";
+echo "</tr>";}echo "</table>";?>
+</div>
+</body>
+</html>
+			
+			
+			
+			
+			
+			
+			
+			<hr>
+			<h4>Reimbursements</h4>
+			<table class="table table-bordered table-hover">
+
+
+
+			</table>
+			<table>
+				<tr>
+					<td>
+						<form onsubmit="event.preventDefault();">
+							<div></div>
+							<label> Employee ID</label> <input type="text" name="employee_id" id="reimbursement">
+							</div>
+							<div class="form action-button">
+								<input type="submit" value="submit">
+							</div>
+						</form>
+					</td>
+					<td>
+						<table class="list" id="employee_id">
+							<thead>
+								<tr>
+									<th>Employee ID</th>
+									<th>Reimbursement ID</th>
+									<th>Event Date</th>
+									<th>Request Date</th>
+									<th>Location</th>
+									<th>Amount</th>
+									<th>Description</th>
+									<th>Event Type</th>
+									<th>Grade Type</th>
+									<th>Status</th>
+								</tr>
+								</thead>
+								<tbody>
+								</tbody>
+						</table>
+		</div>
+	</div>
+
+
+	<input type="test" id="reimbursement_id"
+		placeholder="Enter Employee ID" />
+	<input type="submit" value="Get Employee Reimbursement" id="submit" />
+
+	<table style="width: 100%">
+		<tr>
+			<th>Employee ID</th>
+			<th>Reimbursement ID</th>
+			<th>Event Date</th>
+			<th>Request Date</th>
+			<th>Location</th>
+			<th>Amount</th>
+			<th>Description</th>
+			<th>Event Type</th>
+			<th>Grade Type</th>
+			<th>Status</th>
+		</tr>
+		<tr>
+			<td>Jill</td>
+			<td>Smith</td>
+			<td>50</td>
+		</tr>
+		<tr>
+			<td>Eve</td>
+			<td>Jackson</td>
+			<td>94</td>
+		</tr>
+	</table>
+
+	<script type="text/javascript" src="viewemployee.js"></script>
+</body>
+
+</html>
