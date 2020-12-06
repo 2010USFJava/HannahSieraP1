@@ -1,6 +1,7 @@
 package com.revature.servlets;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,12 +12,22 @@ public class JSONServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		System.out.println("in doGet");
-		JSONRequestHelper.process(req, res);
+		try {
+			JSONRequestHelper.process(req, res);
+		} catch (IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		System.out.println("in doPost");
-		JSONRequestHelper.process(req, res);
+		try {
+			JSONRequestHelper.process(req, res);
+		} catch (IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 }

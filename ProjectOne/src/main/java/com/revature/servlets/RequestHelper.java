@@ -4,7 +4,6 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.revature.controller.EmployeeController;
 import com.revature.controller.LoginController;
 import com.revature.controller.ManagerController;
 import com.revature.controller.ManagerLoginController;
@@ -19,15 +18,15 @@ public class RequestHelper {
 		case "/ProjectOne/login.change":
 			System.out.println("in login.change rhelper");
 			return LoginController.login(req);
-		
+
 		case "/ProjectOne/managerlogin.change":
 			System.out.println("in managerlogin.change rhelper");
 			return ManagerLoginController.login(req);
-			
+
 		case "/ProjectOne/managerhomepage.change":
 			System.out.println("in managerhomepage.change rhelper");
 			return ManagerController.managerhome(req);
-		
+
 		case "/ProjectOne/profile.change":
 			System.out.println("in profile.change rhelper");
 			return ProfileController.profile(req);
@@ -35,11 +34,10 @@ public class RequestHelper {
 		case "/ProjectOne/reimbursement.change":
 			System.out.println("in reimbursement.change rhelper");
 			return ReimbursementController.reimbursement(req);
-		
+
 		case "/ProjectOne/viewreimbursement.change":
 			System.out.println("in reimbursement.change rhelper");
-			return ReimbursementController.viewreimbursement(req);
-			
+			return "ViewReimbursementServlet";
 
 		default:
 			System.out.println("in default case");

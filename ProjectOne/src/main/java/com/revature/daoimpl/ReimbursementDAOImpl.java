@@ -1,18 +1,17 @@
 package com.revature.daoimpl;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.revature.dao.RiembursementDAO;
+import com.revature.dao.ReimbursementDAO;
 import com.revature.model.Reimbursement;
 import com.revature.util.ConnFactory;
 
-public class ReimbursementDAOImpl implements RiembursementDAO {
+public class ReimbursementDAOImpl implements ReimbursementDAO {
 	public static ConnFactory cf = ConnFactory.getInstance();
 	@Override
 	public Reimbursement getReimbursementByID(int id) throws SQLException {
@@ -25,8 +24,8 @@ public class ReimbursementDAOImpl implements RiembursementDAO {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				form.setEmpID(rs.getInt(1));
-				form.setEventDate(rs.getDate(2));
-				form.setRequestDate(rs.getDate(3));
+				form.setEventDate(rs.getString(2));
+				form.setRequestDate(rs.getString(3));
 				form.setLocation(rs.getString(4));
 				form.setAmount(rs.getInt(5));
 				form.setDescription(rs.getString(6));
@@ -73,8 +72,8 @@ public class ReimbursementDAOImpl implements RiembursementDAO {
 			String sql = "INSERT INTO reimbursement values(DEFAULT,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, form.getEmpID());
-			ps.setDate(2, (Date) form.getEventDate());
-			ps.setDate(3, (Date) form.getRequestDate());
+			ps.setString(2, form.getEventDate());
+			ps.setString(3, form.getRequestDate());
 			ps.setString(4, form.getLocation());
 			ps.setInt(5, form.getAmount());
 			ps.setString(6, form.getDescription());
@@ -89,32 +88,22 @@ public class ReimbursementDAOImpl implements RiembursementDAO {
 	}
 
 	@Override
-	public Reimbursement getReimbursementByEmpID(String empID) throws SQLException {
-		Reimbursement form = new Reimbursement();
+	public List<Reimbursement> getReimbursementByEmpID(int empID) throws SQLException {
+		List<Reimbursement> rList = new ArrayList<Reimbursement>();
 		try {
 			Connection conn = cf.getConnection();
 			String sql = "SELECT * FROM reimbursement WHERE employee_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, empID);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
-				form.setFormID(rs.getInt(1));
-				form.setEventDate(rs.getDate(2));
-				form.setRequestDate(rs.getDate(3));
-				form.setLocation(rs.getString(4));
-				form.setAmount(rs.getInt(5));
-				form.setDescription(rs.getString(6));
-				form.setEventType(rs.getString(7));
-				form.setGradeType(rs.getString(8));
-				form.setStatus(rs.getBoolean(9));
-				
+				rList.add(new Reimbursement());
 			}
-				
-		}catch(SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		return form;
+		return rList;
 	}
+
+
 
 }

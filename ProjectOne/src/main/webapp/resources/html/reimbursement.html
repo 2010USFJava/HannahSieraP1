@@ -252,11 +252,11 @@ button:hover {
 			</div>
 			<div class="item">
 				<p>Current Date</p>
-				<input type="text" name="name" />
+				<input type="text" name="requestDate" />
 			</div>
 			<div class="item">
 				<p>Event Date</p>
-				<input type="date" name="bdate" required /> <i
+				<input type="date" name="eventDate" required /> <i
 					class="fas fa-calendar-alt"></i>
 			</div>
 			<h5>1. Employee Information:</h5>
@@ -264,20 +264,20 @@ button:hover {
 				<p>
 					Employee ID<span class="required">*</span>
 				</p>
-				<input type="text" name="name" required />
+				<input type="text" name="empID" required />
 			</div>
 
 			<p>
 				Location<span class="required">*</span>
 			</p>
-			<input type="text" name="name" required />
+			<input type="text" name="location" required />
 	</div>
 	<div class="item">
 		<p>
 			Amount<span class="required">*</span>
 		</p>
 		<div class="city-item">
-			<input type="text" name="name" placeholder="Amount" required /> <select
+			<input type="text" name="amount" placeholder="Amount" required /> <select
 				required>
 				<option value="">Event Type</option>
 				<option value="1">University Courses</option>
@@ -285,7 +285,7 @@ button:hover {
 				<option value="3">Certification Preparation Classes</option>
 				<option value="4">Certification</option>
 				<option value="5">Technical Training</option>
-				<option value="5">Other</option>
+				<option value="6">Other</option>
 			</select>
 		</div>
 	</div>
@@ -321,7 +321,7 @@ button:hover {
 		<br />
 		<div class="item">
 			<p>Form ID</p>
-			<input type="text" name="name" />
+			<input type="text" name="formID" />
 		</div>
 		<div class="btn-block">
 			<button type="submit" href="/">Submit Reimbursement Request</button>
