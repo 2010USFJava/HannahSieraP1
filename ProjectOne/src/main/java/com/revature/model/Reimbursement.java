@@ -1,13 +1,13 @@
 package com.revature.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Reimbursement {
 
 	public int formID;
 	public int empID;
-	public Date eventDate;
-	public Date requestDate;
+	public String eventDate;
+	public String requestDate;
 	public String location;
 	public int amount;
 	public String description;
@@ -20,7 +20,7 @@ public class Reimbursement {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Reimbursement(int formID, int empID, Date eventDate, Date requestDate, String location, int amount,
+	public Reimbursement(int formID, int empID, String eventDate, String requestDate, String location, int amount,
 			String description, String eventType, String gradeType, boolean status) {
 		super();
 		this.formID = formID;
@@ -51,19 +51,19 @@ public class Reimbursement {
 		this.empID = empID;
 	}
 
-	public Date getEventDate() {
+	public String getEventDate() {
 		return eventDate;
 	}
 
-	public void setEventDate(Date eventDate) {
+	public void setEventDate(String eventDate) {
 		this.eventDate = eventDate;
 	}
 
-	public Date getRequestDate() {
+	public String getRequestDate() {
 		return requestDate;
 	}
 
-	public void setRequestDate(Date requestDate) {
+	public void setRequestDate(String requestDate) {
 		this.requestDate = requestDate;
 	}
 

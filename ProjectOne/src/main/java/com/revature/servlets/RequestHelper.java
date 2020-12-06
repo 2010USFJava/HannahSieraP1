@@ -28,8 +28,13 @@ public class RequestHelper {
 
 		case "/ProjectOne/reimbursement.change":
 			System.out.println("in reimbursement.change rhelper");
-			return ReimbursementController.reimbursement(req);
-
+			return "resources/html/reimbursement.html";
+		
+		case "/ProjectOne/successreimbursement.change":
+			System.out.println("in success reimbursement.change rhelper");
+			ReimbursementController.addReimbursement(req);
+			return "resources/html/successreimbursement.html";
+			
 		default:
 			System.out.println("in default case");
 			return "resources/html/unsuccessfullogin.html";

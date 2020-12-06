@@ -7,7 +7,7 @@
 	rel="stylesheet">
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-	
+
 <style>
 html, body {
 	min-height: 100%;
@@ -246,7 +246,7 @@ button:hover {
 </head>
 <body>
 	<div class="testbox">
-		<form action="/ProjectOne/profile.change">
+		<form method="POST" action="/ProjectOne/successreimbursement.change">
 			<div class="banner">
 				<h1>Reimbursement Form</h1>
 			</div>
@@ -278,14 +278,15 @@ button:hover {
 		</p>
 		<div class="city-item">
 			<input type="text" name="amount" placeholder="Amount" required /> <select
-				required>
+				name="eventType" required>
 				<option value="">Event Type</option>
-				<option value="1">University Courses</option>
-				<option value="2">Seminars</option>
-				<option value="3">Certification Preparation Classes</option>
-				<option value="4">Certification</option>
-				<option value="5">Technical Training</option>
-				<option value="6">Other</option>
+				<option value="University Courses">University Courses</option>
+				<option value="Seminars">Seminars</option>
+				<option value="Certification Preparation Classes">Certification
+					Preparation Classes</option>
+				<option value="Certification">Certification</option>
+				<option value="Techical Training">Technical Training</option>
+				<option value="Other">Other</option>
 			</select>
 		</div>
 	</div>
@@ -293,40 +294,40 @@ button:hover {
 		<p>
 			Description<span class="required">*</span>
 		</p>
-		<textarea rows="3" required></textarea>
+		<textarea rows="3" name="description" required></textarea>
 	</div>
 	<div>
 		<p>
 			Grade Type:<span class="required">*</span>
 		</p>
 		<div class="question-answer">
-			<input type="radio" value="none" id="radio_7" name="gradetype" /> <label
-				for="radio_7" class="radio"><span>Graded</span></label> 
-				<input type="radio" value="none" id="radio_8" name="gradetype" /> <label
+			<input type="radio" value="graded" id="radio_7" name="gradeType" /> <label
+				for="radio_7" class="radio"><span>Graded</span></label> <input
+				type="radio" value="presentation" id="radio_8" name="gradeType" /> <label
 				for="radio_8" class="radio"><span>Presentation</span></label>
 		</div>
 	</div>
 
 
-	<h5>For managers only:</h5>
+	<!-- <h5>For managers only:</h5>
 	<div class="question">
 		<p>Status:</p>
 		<div class="question-answer">
 			<input type="radio" value="none" id="radio_7" name="status" /> <label
-				for="radio_7" class="radio"><span>Approved</span></label> 
-				<input type="radio" value="none" id="radio_8" name="status" /> <label
+				for="radio_7" class="radio"><span>Approved</span></label> <input
+				type="radio" value="none" id="radio_8" name="status" /> <label
 				for="radio_8" class="radio"><span>Denied</span></label>
-		</div>
+		</div> -->
 
-		<br />
-		<div class="item">
-			<p>Form ID</p>
-			<input type="text" name="formID" />
-		</div>
-		<div class="btn-block">
-			<button type="submit" href="/">Submit Reimbursement Request</button>
-		</div>
-		</form>
+	<br />
+	<div class="item">
+		<!-- <p>Form ID</p>
+			<input type="text" name="name" /> -->
+	</div>
+	<div class="btn-block">
+		<button type="submit" href="/">Submit Reimbursement Request</button>
+	</div>
+	</form>
 	</div>
 </body>
 </html>

@@ -25,8 +25,8 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				form.setEmpID(rs.getInt(1));
-				form.setEventDate(rs.getDate(2));
-				form.setRequestDate(rs.getDate(3));
+				form.setEventDate(rs.getString(2));
+				form.setRequestDate(rs.getString(3));
 				form.setLocation(rs.getString(4));
 				form.setAmount(rs.getInt(5));
 				form.setDescription(rs.getString(6));
@@ -73,8 +73,8 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 			String sql = "INSERT INTO reimbursement values(DEFAULT,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, form.getEmpID());
-			ps.setDate(2, (Date) form.getEventDate());
-			ps.setDate(3, (Date) form.getRequestDate());
+			ps.setString(2, form.getEventDate());
+			ps.setString(3, form.getRequestDate());
 			ps.setString(4, form.getLocation());
 			ps.setInt(5, form.getAmount());
 			ps.setString(6, form.getDescription());
@@ -99,8 +99,8 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				form.setFormID(rs.getInt(1));
-				form.setEventDate(rs.getDate(2));
-				form.setRequestDate(rs.getDate(3));
+				form.setEventDate(rs.getString(2));
+				form.setRequestDate(rs.getString(3));
 				form.setLocation(rs.getString(4));
 				form.setAmount(rs.getInt(5));
 				form.setDescription(rs.getString(6));
