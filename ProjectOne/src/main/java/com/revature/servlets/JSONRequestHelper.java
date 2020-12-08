@@ -24,7 +24,7 @@ public class JSONRequestHelper {
 					
 			case "/ProjectOne/reimbursement.json":
 				System.out.println("in reimbursement.json helper");
-				ReimbursementController.reimbursement(req);
+				ReimbursementController.getReimbursement(req);
 				break;
 				
 			default:

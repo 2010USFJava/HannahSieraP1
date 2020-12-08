@@ -11,17 +11,18 @@ import com.revature.model.Reimbursement;
 public class ReimbursementService {
 
 	ReimbursementDAO rdao = new ReimbursementDAOImpl();
-	
+	//adds reimbursements 
 	public void addReimbursement(Reimbursement re) throws SQLException {
 		rdao.addReimbursement(re);
 	}
-// get list of reimbursements by employee id 
+	// get list of reimbursements by employee id 
 	public List<Reimbursement> getReimbursementByID(Employee id) throws SQLException {
 		 List<Reimbursement> reimbursements;
 	      reimbursements = rdao.getReimbursement();
 	    
 	        return reimbursements;
 	}
+	//get reimbursement by reim id 
 	  public Reimbursement viewReimbursementById(int id) throws SQLException {
 	        return rdao.getReimbursementByID(id);
 	    }
