@@ -9,7 +9,7 @@ public class ManagerLoginController {
 
 static ManagerService mServ = new ManagerService();
 	
-	public static String login(HttpServletRequest req) {
+	public static String mlogin(HttpServletRequest req) {
 		if(!req.getMethod().equals("POST")) {
 			return "resources/html/managerlogin.html";
 			
@@ -22,7 +22,7 @@ static ManagerService mServ = new ManagerService();
 			
 		} else {
 			req.getSession().setAttribute("currentman", man);
-			return "profile.change";
+			return "managerhomepage.change";
 		}
 	}
 

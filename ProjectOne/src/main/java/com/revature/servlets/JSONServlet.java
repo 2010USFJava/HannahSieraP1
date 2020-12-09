@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 public class JSONServlet extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8170353066782994112L;
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		System.out.println("in doGet");
 		try {

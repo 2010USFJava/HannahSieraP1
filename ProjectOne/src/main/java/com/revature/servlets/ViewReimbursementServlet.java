@@ -15,6 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.revature.util.ConnFactory;
 
 public class ViewReimbursementServlet extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5148255757739159921L;
 	public static ConnFactory cf = ConnFactory.getInstance();
 	static {
 		try { Class.forName("org.postgresql.Driver");
