@@ -1,12 +1,20 @@
 package com.revature.model;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1221768556715342873L;
 	public String firstName;
 	public String lastName;
 	public String username;
 	public String password;
 	public int empID;
+	
+	
 	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub

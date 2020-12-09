@@ -7,7 +7,5 @@ public class ProfileController {
 	
 public static String profile(HttpServletRequest req) {
 	return "resources/html/profile.html";
-	
-
-}
+	}
 }

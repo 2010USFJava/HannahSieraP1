@@ -15,4 +15,7 @@ public class ManagerController {
 		Manager man = (Manager) req.getSession().getAttribute("currentman");
 			res.getWriter().write(new ObjectMapper().writeValueAsString(man));
 	}
+//	public static String managerhome(HttpServletRequest req) {
+//		return "resources/html/managerhomepage.html";
+//	}
 }

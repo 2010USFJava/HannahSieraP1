@@ -22,7 +22,7 @@ static ManagerService mServ = new ManagerService();
 			
 		} else {
 			req.getSession().setAttribute("currentman", man);
-			return "profile.change";
+			return "managerhomepage.change";
 		}
 	}
 

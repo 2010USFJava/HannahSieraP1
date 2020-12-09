@@ -1,7 +1,13 @@
 package com.revature.model;
 
-public class Manager {
+import java.io.Serializable;
 
+public class Manager implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7307584586844010601L;
 	public String firstName;
 	public String lastName;
 	public String username;

@@ -7,6 +7,7 @@ import com.revature.daoimpl.ManagerDAOImpl;
 import com.revature.model.Manager;
 
 public class ManagerService {
+	
 	ManagerDAO mdao = new ManagerDAOImpl();
 	
 	public boolean loginVerify(String username, String password){

@@ -64,9 +64,28 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	}
 
 	@Override
-	public Employee updateEmployee() {
-
-		return null;
+	public Employee updateEmployeeUsername(String newUsername, int id, Employee e) throws SQLException {
+		Connection conn=cf.getConnection();
+		String sql= "update employee set username =? where emp_id=?;";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, newUsername);
+		ps.setInt(2, id);
+		ps.executeUpdate();
+		e.setUsername(newUsername);
+		//LogThis.LogIt("info", " A customer has an updated password: " + a.getPassword());
+		return e;
+	}
+	
+	public Employee updateEmployeePassword(String newPassword, int id, Employee e) throws SQLException {
+		Connection conn=cf.getConnection();
+		String sql= "update employee set username =? where emp_id=?;";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, newPassword);
+		ps.setInt(2, id);
+		ps.executeUpdate();
+		e.setPassword(newPassword);
+		//LogThis.LogIt("info", " A customer has an updated password: " + a.getPassword());
+		return e;
 	}
 	public void addEmployee(Employee emp) {
 		try {
