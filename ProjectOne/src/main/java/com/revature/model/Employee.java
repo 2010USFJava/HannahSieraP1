@@ -63,6 +63,11 @@ public class Employee implements Serializable {
 		this.password = password;
 		this.empID = empID;
 	}
+
+	public Employee(String username, int id) {
+		this.username=username;
+		this.empID=id;
+	}
 	
 
 }

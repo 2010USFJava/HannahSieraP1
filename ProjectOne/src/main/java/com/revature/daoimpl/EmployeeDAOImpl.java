@@ -64,9 +64,26 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	}
 
 	@Override
-	public Employee updateEmployee() {
+	public void updateEmployeeUsername(String newUsername, int id) throws SQLException {
+		Connection conn=cf.getConnection();
+		String sql= "update employee set username =? where emp_id=?;";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, newUsername);
+		ps.setInt(2, id);
+		ps.executeUpdate();
 
-		return null;
+	
+	}
+	
+	@Override
+	public void updateEmployeePassword(String newPassword, int id) throws SQLException {
+		Connection conn=cf.getConnection();
+		String sql= "update employee set password =? where emp_id=?;";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, newPassword);
+		ps.setInt(2, id);
+		ps.executeUpdate();
+		
 	}
 	public void addEmployee(Employee emp) {
 		try {
@@ -105,6 +122,12 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		}
 		
 		return emp;
+	}
+
+	@Override
+	public Employee updateEmployee() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

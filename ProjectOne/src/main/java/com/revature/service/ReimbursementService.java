@@ -16,16 +16,12 @@ public class ReimbursementService {
 		rdao.addReimbursement(re);
 	}
 	// get list of reimbursements by employee id 
-	public List<Reimbursement> getReimbursementByID(Employee id) throws SQLException {
-		 List<Reimbursement> reimbursements;
-	      reimbursements = rdao.getReimbursement();
-	    
-	        return reimbursements;
+	public List<Reimbursement> getReimbursementByEmployeeID(int id) throws SQLException {
+		 List<Reimbursement> rList;
+	     rList=rdao.getReimbursementByEmpID(id);
+	        return rList;
 	}
-	//get reimbursement by reim id 
-	  public Reimbursement viewReimbursementById(int id) throws SQLException {
-	        return rdao.getReimbursementByID(id);
-	    }
+
 	  //get all reimbursements from all employees 
 	  public List<Reimbursement> getReimbursement() throws SQLException {
 		  List<Reimbursement> rList;

@@ -19,7 +19,7 @@
 	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
 	rel="stylesheet" type="text/css" />
 <!-- Core theme CSS (includes Bootstrap)-->
- <link href="/ProjectOne/resources/html/profile.css" rel="stylesheet" />
+<link href="/ProjectOne/resources/html/profile.css" rel="stylesheet" />
 <link href="/projectOne/resources/html/signin.css" rel="stylesheet" />
 </head>
 <body>
@@ -60,7 +60,7 @@
 				src="https://icons.iconarchive.com/icons/webalys/kameleon.pics/512/Coding-Html-icon.png"
 				alt="" />
 			<!-- Masthead Heading-->
-			<h1 class="masthead-heading text-uppercase mb-0">Welcome!</h1>
+			<h1 class="masthead-heading text-uppercase mb-0">Welcome!<span id="empName"></span></h1>
 			<!-- Icon Divider-->
 			<div class="divider-custom divider-light">
 				<div class="divider-custom-line"></div>
@@ -89,96 +89,15 @@
 				</div>
 				<div class="divider-custom-line"></div>
 			</div>
-			<!-- Portfolio Grid Items-->
-			<div class="row justify-content-center">
-				<!-- Portfolio Item 1-->
-				<div class="col-md-6 col-lg-4 mb-5">
-					<div class="portfolio-item mx-auto" data-toggle="modal"
-						data-target="#portfolioModal1">
-						<div
-							class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-							<div
-								class="portfolio-item-caption-content text-center text-white">
-								<i class="fas fa-plus fa-3x"></i>
-							</div>
-						</div>
-						<img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="" />
+			<div class="text-center mt-4">
+	<form action="/ProjectOne/updateEmployeeProfile.change">
+					<div class="container">
+						<button class="btn btn-xl btn-outline-dark" type='submit'
+							id="reimbursementCreate">Update Employee Profile</button>
 					</div>
+					<div class='container' id='submitoccurred'></div>
+				</form>
 				</div>
-				<!-- Portfolio Item 2-->
-				<div class="col-md-6 col-lg-4 mb-5">
-					<div class="portfolio-item mx-auto" data-toggle="modal"
-						data-target="#portfolioModal2">
-						<div
-							class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-							<div
-								class="portfolio-item-caption-content text-center text-white">
-								<i class="fas fa-plus fa-3x"></i>
-							</div>
-						</div>
-						<img class="img-fluid" src="assets/img/portfolio/cake.png" alt="" />
-					</div>
-				</div>
-				<!-- Portfolio Item 3-->
-				<div class="col-md-6 col-lg-4 mb-5">
-					<div class="portfolio-item mx-auto" data-toggle="modal"
-						data-target="#portfolioModal3">
-						<div
-							class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-							<div
-								class="portfolio-item-caption-content text-center text-white">
-								<i class="fas fa-plus fa-3x"></i>
-							</div>
-						</div>
-						<img class="img-fluid" src="assets/img/portfolio/circus.png"
-							alt="" />
-					</div>
-				</div>
-				<!-- Portfolio Item 4-->
-				<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-					<div class="portfolio-item mx-auto" data-toggle="modal"
-						data-target="#portfolioModal4">
-						<div
-							class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-							<div
-								class="portfolio-item-caption-content text-center text-white">
-								<i class="fas fa-plus fa-3x"></i>
-							</div>
-						</div>
-						<img class="img-fluid" src="assets/img/portfolio/game.png" alt="" />
-					</div>
-				</div>
-				<!-- Portfolio Item 5-->
-				<div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-					<div class="portfolio-item mx-auto" data-toggle="modal"
-						data-target="#portfolioModal5">
-						<div
-							class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-							<div
-								class="portfolio-item-caption-content text-center text-white">
-								<i class="fas fa-plus fa-3x"></i>
-							</div>
-						</div>
-						<img class="img-fluid" src="assets/img/portfolio/safe.png" alt="" />
-					</div>
-				</div>
-				<!-- Portfolio Item 6-->
-				<div class="col-md-6 col-lg-4">
-					<div class="portfolio-item mx-auto" data-toggle="modal"
-						data-target="#portfolioModal6">
-						<div
-							class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-							<div
-								class="portfolio-item-caption-content text-center text-white">
-								<i class="fas fa-plus fa-3x"></i>
-							</div>
-						</div>
-						<img class="img-fluid" src="assets/img/portfolio/submarine.png"
-							alt="" />
-					</div>
-				</div>
-			</div>
-		</div>
 	</section>
 	<!-- About Section-->
 	<section class="page-section bg-primary text-white mb-0" id="about">
@@ -196,25 +115,14 @@
 			</div>
 			<!-- About Section Content-->
 			<div class="row">
-				<div class="col-lg-4 ml-auto">
-					<p class="lead">Freelancer is a free bootstrap theme created by
-						Start Bootstrap. The download includes the complete source files
-						including HTML, CSS, and JavaScript as well as optional SASS
-						stylesheets for easy customization.</p>
-				</div>
-				<div class="col-lg-4 mr-auto">
-					<p class="lead">You can create your own custom avatar for the
-						masthead, change the icon in the dividers, and add your email
-						address to the contact form to make it fully functional!</p>
-				</div>
+				
 			</div>
 			<!-- Submit Reimbursement Button-->
 			<div class="text-center mt-4">
-				<form action="/ProjectOne/viewreimbursement.change">
+				<form action="/ProjectOne/viewReimbursement.change">
 					<div class="container">
 						<button class="btn btn-xl btn-outline-light" type='submit'
-							id="reimbursementCreate">View Reimbursement
-							Request</button>
+							id="reimbursementCreate">View Reimbursement Request</button>
 					</div>
 					<div class='container' id='submitoccurred'></div>
 				</form>

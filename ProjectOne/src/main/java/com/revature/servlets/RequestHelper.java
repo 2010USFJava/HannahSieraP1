@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.revature.controller.EmployeeController;
 import com.revature.controller.LoginController;
 import com.revature.controller.ManagerController;
 import com.revature.controller.ManagerLoginController;
@@ -35,14 +36,29 @@ public class RequestHelper {
 			System.out.println("in reimbursement.change rhelper");
 			return "resources/html/reimbursement.html";
 
-		case "/ProjectOne/viewreimbursement.change":
-			System.out.println("in reimbursement.change rhelper");
-			return "ViewReimbursementServlet";
 			
 		case "/ProjectOne/successreimbursement.change":
 			System.out.println("in success reimbursement.change rhelper");
 			ReimbursementController.addReimbursement(req);
 			return "resources/html/successreimbursement.html";
+		
+		case "/ProjectOne/updateEmployeeProfile.change":
+			System.out.println("in update employee profile.change rhelper");
+			return "resources/html/updateEmployeeProfile.html";
+	
+		case "/ProjectOne/updatesuccess.change":
+			System.out.println("in updatesuccess.change rhelper");
+			EmployeeController.updateEmployee(req);
+			return "/resources/html/updatesuccess.html";
+			
+		case "/ProjectOne/viewreimbursement.change":
+			System.out.println("in viewreimbursement.change rhelper");
+			return "ViewReimbursementServlet";
+			
+		case "/ProjectOne/viewReimbursement.change":
+			System.out.println("in viewReimbursement.change r helper");
+			ReimbursementController.getReimbursement(req);
+			return "/resources/html/viewReimbursement.html";
 
 		default:
 			System.out.println("in default case");

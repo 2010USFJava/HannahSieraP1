@@ -28,16 +28,7 @@
     <servlet-name>JSONServlet</servlet-name>
     <url-pattern>*.json</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ViewReimbursements</display-name>
-    <servlet-name>ViewReimbursements</servlet-name>
-    <servlet-class>com.revature.servlets.ViewReimbursements</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ViewReimbursements</servlet-name>
-    <url-pattern>/ViewReimbursements</url-pattern>
-  </servlet-mapping>
+
   <servlet>
     <description></description>
     <display-name>ViewReimbursementServlet</display-name>
@@ -47,5 +38,15 @@
   <servlet-mapping>
     <servlet-name>ViewReimbursementServlet</servlet-name>
     <url-pattern>/ViewReimbursementServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewEmployeeReimbursement</display-name>
+    <servlet-name>ViewEmployeeReimbursement</servlet-name>
+    <servlet-class>com.revature.servlets.ViewEmployeeReimbursement</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewEmployeeReimbursement</servlet-name>
+    <url-pattern>/ViewEmployeeReimbursement</url-pattern>
   </servlet-mapping>
 </web-app>
