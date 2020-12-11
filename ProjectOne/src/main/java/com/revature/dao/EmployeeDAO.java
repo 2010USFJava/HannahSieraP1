@@ -9,10 +9,12 @@ public interface EmployeeDAO {
 
 	public Employee getEmployeeByID(int ID);
 	public List<Employee> getEmployees();
-	public Employee updateEmployeeUsername(String newUsername, int id, Employee e) throws SQLException;
-	public Employee updateEmployeePassword(String newPassword, int id, Employee e) throws SQLException;
+	public void updateEmployeeUsername(String newUsername, int id) throws SQLException;
+	public void updateEmployeePassword(String newPassword, int id) throws SQLException;
 	public void addEmployee(Employee emp);
 	public Employee getEmployeeByUsername(String username);
+	public void withdraw(double amount, int eid) throws SQLException;
+	public void deposit(int rid) throws SQLException;
 	
 	
 }

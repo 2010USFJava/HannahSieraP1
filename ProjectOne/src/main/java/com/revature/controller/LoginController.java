@@ -19,11 +19,12 @@ public class LoginController {
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 		Employee emp = eServ.loginGetEmployee(username, password);
+	
 		if(emp==null) {
 			return "wrongcreds.change";
 			
 		} else {
-			req.getSession().setAttribute("currentemp", emp);
+			req.getSession().setAttribute("currentemp", emp); //emp.getEmpID()
 			return "profile.change";
 		}
 	}

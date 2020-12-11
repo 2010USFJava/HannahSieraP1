@@ -50,6 +50,7 @@ public class ViewReimbursementServlet extends HttpServlet {
 	                 String i = rs.getString("grade_type");
 	                 Boolean j = rs.getBoolean("status");
 	                 out.println("<tr><td>" + a + "</td><td>" + b + "</td><td>" + c + "</td><td>" + d + "</td><td>" + e + "</td><td>"+ f +"</td><td>" + g +"</td><td>"+ h +"</td><td>"+ i +"</td><td>" + j +"</td></tr>");   
+	             
 	             }  
 	             out.println("</table>");  
 	             out.println("<div>");

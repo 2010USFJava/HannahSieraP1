@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta charset="ISO-8859-1">
+<title>Update Reimbursement Status</title>
+</head>
+<body>
+	<form method="POST" action="/ProjectOne/reupdateemp.change">
+		<div class="banner">
+			<h1>Update Existing Reimbursement</h1>
+		</div>
+		<div class="item">
+			<p>Enter the reimbursement form ID</p>
+			<input type="text" name="reID" placeholder="Reimbursement Form ID"
+				required />
+		</div>
+		<div class="item">
+			<p>Select Grades</p>
+			<select name="grade" >
+				<option value="A">A</option>
+				<option value="B">B</option>
+				<option value="C">C</option>
+				<option value="D">D</option>
+				<option value="E">E</option>
+				<option value="F">F</option>
+				<option value="Presentation">Presentation</option>
+			</select>
+		</div>
+		<div class="item">
+			<p>
+				Description
+			</p>
+			<textarea rows="3" name="description"></textarea>
+		</div>
+
+		<button type="submit" href="/">Submit Status</button>
+	</form>
+
+
+</body>
+</html>

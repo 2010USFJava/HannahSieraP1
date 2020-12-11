@@ -28,7 +28,7 @@ public class JSONRequestHelper {
 			break;
 
 		default:
-			Employee emp = new Employee("?", "?", "?", "?", 0);
+			Employee emp = new Employee("?", "?", "?", "?", 0, 0);
 			res.getWriter().write(new ObjectMapper().writeValueAsString(emp));
 
 		}

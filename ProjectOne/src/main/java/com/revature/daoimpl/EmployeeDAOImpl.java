@@ -12,14 +12,16 @@ import com.revature.model.Employee;
 import com.revature.util.ConnFactory;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
-	
+
 	public static ConnFactory cf = ConnFactory.getInstance();
 	static {
-		try { Class.forName("org.postgresql.Driver");
+		try {
+			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+		}
 	}
-	}
+
 	@Override
 	public Employee getEmployeeByID(int id) {
 		Employee emp = new Employee();
@@ -29,19 +31,19 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				emp.setFirstName(rs.getString(1));
 				emp.setLastName(rs.getString(2));
 				emp.setUsername(rs.getString(3));
 				emp.setPassword(rs.getString(4));
 				emp.setEmpID(rs.getInt(5));
-				
+
 			}
-				
-		}catch(SQLException e) {
+
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return emp;
 	}
 
@@ -54,8 +56,9 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			String sql = "SELECT * FROM employee";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
-			while(rs.next()) {
-				eList.add(new Employee(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5)));
+			while (rs.next()) {
+				eList.add(new Employee(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5),
+						rs.getDouble(6)));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -64,29 +67,30 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	}
 
 	@Override
-	public Employee updateEmployeeUsername(String newUsername, int id, Employee e) throws SQLException {
-		Connection conn=cf.getConnection();
-		String sql= "update employee set username =? where emp_id=?;";
+	public void updateEmployeeUsername(String newUsername, int id) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql = "update employee set username =? where emp_id=?;";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, newUsername);
 		ps.setInt(2, id);
 		ps.executeUpdate();
-		e.setUsername(newUsername);
-		//LogThis.LogIt("info", " A customer has an updated password: " + a.getPassword());
-		return e;
+		// LogThis.LogIt("info", " A customer has an updated password: " +
+		// a.getPassword());
+
 	}
-	
-	public Employee updateEmployeePassword(String newPassword, int id, Employee e) throws SQLException {
-		Connection conn=cf.getConnection();
-		String sql= "update employee set username =? where emp_id=?;";
+
+	public void updateEmployeePassword(String newPassword, int id) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql = "update employee set username =? where emp_id=?;";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, newPassword);
 		ps.setInt(2, id);
 		ps.executeUpdate();
-		e.setPassword(newPassword);
-		//LogThis.LogIt("info", " A customer has an updated password: " + a.getPassword());
-		return e;
+		// LogThis.LogIt("info", " A customer has an updated password: " +
+		// a.getPassword());
+
 	}
+
 	public void addEmployee(Employee emp) {
 		try {
 			Connection conn = cf.getConnection();
@@ -97,7 +101,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			ps.setString(3, emp.getUsername());
 			ps.setString(4, emp.getPassword());
 			ps.execute();
-		}catch(SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
@@ -110,20 +114,92 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, username);
 			ResultSet rs = ps.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				emp.setFirstName(rs.getString(1));
 				emp.setLastName(rs.getString(2));
 				emp.setUsername(rs.getString(3));
 				emp.setPassword(rs.getString(4));
 				emp.setEmpID(rs.getInt(5));
-				
+
 			}
-				
-		}catch(SQLException e) {
+
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return emp;
 	}
 
+	public void withdraw2(int id) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql = "select amount, employee_id from reimbursement where reimbursement_id=?;";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, id);
+		ResultSet rs = ps.executeQuery();
+		while (rs.next()) {
+			Double amount = rs.getDouble("amount");
+			int empID = rs.getInt("employee_id");
+			if (amount >= 1) {
+				String sql2 = "select balance from employee where emp_id=?;";
+				PreparedStatement ps2 = conn.prepareStatement(sql2);
+				ps2.setDouble(1, empID);
+				ResultSet rs2 = ps2.executeQuery();
+				while (rs2.next()) {
+					Double balance = rs2.getDouble("balance");
+					double modBalance = balance - amount;
+					String sql3 = "update employee set balance =? where emp_id=?;";
+					PreparedStatement ps3 = conn.prepareStatement(sql3);
+					ps3.setDouble(1, modBalance);
+					ps3.setInt(2, id);
+					ps3.executeUpdate();
+				}
+			}
+		}
+	}
+
+	public void withdraw(double amount, int eid) throws SQLException {
+		Connection conn = cf.getConnection();
+		if (amount >= 1) {
+			String sql2 = "select balance from employee where emp_id=?;";
+			PreparedStatement ps2 = conn.prepareStatement(sql2);
+			ps2.setDouble(1, eid);
+			ResultSet rs2 = ps2.executeQuery();
+			while (rs2.next()) {
+				Double balance = rs2.getDouble("balance");
+				double modBalance = balance - amount;
+				String sql3 = "update employee set balance =? where emp_id=?;";
+				PreparedStatement ps3 = conn.prepareStatement(sql3);
+				ps3.setDouble(1, modBalance);
+				ps3.setInt(2, eid);
+				ps3.executeUpdate();
+			}
+		}
+	}
+	
+	public void deposit(int rid) throws SQLException {
+		Connection conn = cf.getConnection();
+		String sql = "select amount, employee_id from reimbursement where reimbursement_id=?;";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setDouble(1, rid);
+		ResultSet rs = ps.executeQuery();
+		while (rs.next()) {
+			Double amount = rs.getDouble("amount");
+			int empid = rs.getInt("employee_id");
+			String sql1 = "select balance from employee where emp_id=?;";
+			PreparedStatement ps1 = conn.prepareStatement(sql1);
+			ps1.setInt(1, empid);
+			ResultSet rs1 = ps1.executeQuery();
+			while (rs1.next()) {
+				Double balance = rs1.getDouble(1);
+				System.out.println(rs1.getDouble(1));
+				double modBalance = balance + amount;
+				String sql2 = "update employee set balance =? where emp_id=?;";
+				PreparedStatement ps2 = conn.prepareStatement(sql2);
+				ps2.setDouble(1, modBalance);
+				ps2.setInt(2, empid);
+				ps2.executeUpdate();
+			}
+		}
+	}
+	
 }

@@ -13,6 +13,7 @@ public class Employee implements Serializable {
 	public String username;
 	public String password;
 	public int empID;
+	public double balance;
 	
 	
 	public Employee() {
@@ -50,18 +51,25 @@ public class Employee implements Serializable {
 	public void setEmpID(int empID) {
 		this.empID = empID;
 	}
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
 	@Override
 	public String toString() {
 		return "Employee [firstName=" + firstName + ", lastName=" + lastName + ", username=" + username + ", password="
 				+ password + ", empID=" + empID + "]";
 	}
-	public Employee(String firstName, String lastName, String username, String password, int empID) {
+	public Employee(String firstName, String lastName, String username, String password, int empID, double balance) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
 		this.password = password;
 		this.empID = empID;
+		this.balance = balance;
 	}
 	
 

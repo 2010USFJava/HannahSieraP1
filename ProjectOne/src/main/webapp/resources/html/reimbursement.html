@@ -252,7 +252,7 @@ button:hover {
 			</div>
 			<div class="item">
 				<p>Current Date</p>
-				<input type="text" name="requestDate" />
+				<input type="text" name="requestDate" id="currentD"/>
 			</div>
 			<div class="item">
 				<p>Event Date</p>
@@ -277,7 +277,8 @@ button:hover {
 			Amount<span class="required">*</span>
 		</p>
 		<div class="city-item">
-			<input type="text" name="amount" placeholder="Amount" required /> <select
+			<input type="text" name="amount" placeholder="Amount" required min="0.00" max="1000.00"/> 
+			<select
 				name="eventType" required>
 				<option value="">Event Type</option>
 				<option value="University Courses">University Courses</option>
@@ -329,5 +330,8 @@ button:hover {
 	</div>
 	</form>
 	</div>
+	<script>
+		document.getElementById('currentD').valueAsDate = new Date();
+	</script>
 </body>
 </html>

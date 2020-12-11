@@ -53,7 +53,7 @@ public class ManagerDAOImpl implements ManagerDAO {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
-				mList.add(new Manager(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5)));
+				mList.add(new Manager(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getBoolean(6),rs.getBoolean(7),rs.getBoolean(8)));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

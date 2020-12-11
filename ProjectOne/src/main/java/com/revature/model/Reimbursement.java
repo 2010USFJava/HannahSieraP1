@@ -13,7 +13,10 @@ public class Reimbursement {
 	public String description;
 	public String eventType;
 	public String gradeType;
-	public boolean status;
+	public String status;
+	public String statusdepthead;
+	public String statusbenco;
+	public String gradeValue;
 	
 	public Reimbursement() {
 		super();
@@ -21,7 +24,7 @@ public class Reimbursement {
 	}
 
 	public Reimbursement(int formID, int empID, String eventDate, String requestDate, String location, int amount,
-			String description, String eventType, String gradeType, boolean status) {
+			String description, String eventType, String gradeType, String status, String statusdepthead, String statusbenco, String gradeValue) {
 		super();
 		this.formID = formID;
 		this.empID = empID;
@@ -33,6 +36,9 @@ public class Reimbursement {
 		this.eventType = eventType;
 		this.gradeType = gradeType;
 		this.status = status;
+		this.statusdepthead = statusdepthead;
+		this.statusbenco = statusbenco;
+		this.gradeValue = gradeValue;
 	}
 
 	public int getFormID() {
@@ -107,20 +113,44 @@ public class Reimbursement {
 		this.gradeType = gradeType;
 	}
 
-	public boolean isStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(boolean status) {
+	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getStatusdepthead() {
+		return statusdepthead;
+	}
+
+	public void setStatusdepthead(String statusdepthead) {
+		this.statusdepthead = statusdepthead;
+	}
+
+	public String getStatusbenco() {
+		return statusbenco;
+	}
+
+	public void setStatusbenco(String statusbenco) {
+		this.statusbenco = statusbenco;
+	}
+
+	public String getGradeValue() {
+		return gradeValue;
+	}
+
+	public void setGradeValue(String gradeValue) {
+		this.gradeValue = gradeValue;
 	}
 
 	@Override
 	public String toString() {
 		return "Reimbursement [formID=" + formID + ", empID=" + empID + ", eventDate=" + eventDate + ", requestDate="
 				+ requestDate + ", location=" + location + ", amount=" + amount + ", description=" + description
-				+ ", eventType=" + eventType + ", gradeType=" + gradeType + ", status=" + status + "]";
+				+ ", eventType=" + eventType + ", gradeType=" + gradeType + ", status=" + status + ", statusdepthead="
+				+ statusdepthead + ", statusbenco=" + statusbenco + ", gradeValue=" + gradeValue + "]";
 	}
-	
 	
 }

@@ -35,6 +35,10 @@ public class EmployeeService {
 		public void addEmployee(Employee emp) {
 			edao.addEmployee(emp);
 		}
+		
+		public Employee getSessionEmp(int empID) {
+			return edao.getEmployeeByID(empID);
+		}
 
 
 	}

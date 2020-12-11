@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta charset="ISO-8859-1">
+<title>Update Reimbursement Status </title>
+</head>
+<body>
+	<form method="POST" action="/ProjectOne/reupdatesuccess.change">
+		<div class="banner">
+				<h1>Update Reimbursement Form Status</h1>
+			</div>
+			<div class="item">
+				<p>Enter the reimbursement form ID</p>
+				<input type="text" name="reID" placeholder="Reimbursement Form ID" required />
+			</div>
+			<div class="item">
+				<p>Select Status</p>
+				<select
+				name="status" required>
+				<option value="pending">Pending</option>
+				<option value="approved">Approved</option>
+				<option value="denied">Denied</option>
+				</select>
+			</div>
+			<div class="item">
+				<p>Request More Information From:</p>
+				<input type="text" name="ID" placeholder="Enter entity ID" required />
+				<select
+				name="request" required>
+				<option value="employee">Employee</option>
+				</select>
+			</div>
+			
+			<button type="submit" href="/">Submit Status</button>
+			</form>
+			
+			
+</body>
+</html>
