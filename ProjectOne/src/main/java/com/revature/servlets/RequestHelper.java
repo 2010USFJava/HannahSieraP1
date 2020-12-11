@@ -71,9 +71,13 @@ public class RequestHelper {
 		
 			
 		//manager can view all reimbursements 
-		case "/ProjectOne/viewreimbursement.change":
+		case "/ProjectOne/viewapprovedreimbursement.change":
 			System.out.println("in viewreimbursement.change rhelper");
 			return "ViewReimbursementServlet";
+		
+		case "/ProjectOne/viewpendingreimbursement.change":
+			System.out.println("in view pending rhelper");
+			return "ViewPending";
 		
 
 		default:

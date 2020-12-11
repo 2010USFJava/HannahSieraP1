@@ -13,11 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.revature.util.ConnFactory;
 
-public class ViewReimbursementServlet extends HttpServlet {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 5148255757739159921L;
+/**
+ * Servlet implementation class ViewPending
+ */
+public class ViewPending extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 	public static ConnFactory cf = ConnFactory.getInstance();
 	static {
 		try { Class.forName("org.postgresql.Driver");
@@ -36,7 +36,7 @@ public class ViewReimbursementServlet extends HttpServlet {
 	        
 	             Connection conn = cf.getConnection();  
 	             Statement stmt = conn.createStatement();  
-	             ResultSet rs = stmt.executeQuery("SELECT * FROM reimbursement WHERE status='approved' ");  
+	             ResultSet rs = stmt.executeQuery("SELECT * FROM reimbursement WHERE status='pending' ");  
 	          
 	             out.println("<table border=1 width=50% height=50%>");  
 	             out.println("<tr><th>Reimbursement ID</th><th>Employee ID</th><th>Event Date</th><th>Request Date</th><th>Location</th><th>Amount</th><th>Description</th><th>Event Type</th><th>Grade Type</th><th>Status</th><tr>");  
