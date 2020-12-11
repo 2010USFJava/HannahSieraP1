@@ -60,7 +60,7 @@
 				src="https://icons.iconarchive.com/icons/webalys/kameleon.pics/512/Coding-Html-icon.png"
 				alt="" />
 			<!-- Masthead Heading-->
-			<h1 class="masthead-heading text-uppercase mb-0">Welcome!<span id="empName"></span></h1>
+			<h1 class="masthead-heading text-uppercase mb-0">Welcome<span id="empName" class="text-primary"></span>!</h1>
 			<!-- Icon Divider-->
 			<div class="divider-custom divider-light">
 				<div class="divider-custom-line"></div>
@@ -119,10 +119,20 @@
 			</div>
 			<!-- Submit Reimbursement Button-->
 			<div class="text-center mt-4">
-				<form action="/ProjectOne/viewReimbursement.change">
+				<form action="/ProjectOne/viewreimbursement.change">
 					<div class="container">
 						<button class="btn btn-xl btn-outline-light" type='submit'
 							id="reimbursementCreate">View Reimbursement Request</button>
+					</div>
+					<div class='container' id='submitoccurred'></div>
+				</form>
+
+			</div>
+			<div class="text-center mt-4">
+				<form action="/ProjectOne/updateGrade.change">
+					<div class="container">
+						<button class="btn btn-xl btn-outline-light" type='submit'
+							id="reimbursementCreate">Update Reimbursement</button>
 					</div>
 					<div class='container' id='submitoccurred'></div>
 				</form>

@@ -20,16 +20,16 @@ public class JSONRequestHelper {
 		switch (req.getRequestURI()) {
 
 		case "/ProjectOne/getsession.json":
+			System.out.println("in getsession.json request helper ");
 			EmployeeController.getSessionEmployee(req, res);
-			break;
-
-		case "/ProjectOne/reimbursement.json":
-			System.out.println("in reimbursement.json helper");
-			ReimbursementController.getReimbursement(req);
 			break;
 
 		case "/ProjectOne/getmsession.json":
 			ManagerController.getSessionManager(req, res);
+			break;
+		
+		case "/ProjectOne/getreimbursementbystatus.json":
+			ReimbursementController.getReimbursementByStatus(req, res);
 			break;
 
 		default:

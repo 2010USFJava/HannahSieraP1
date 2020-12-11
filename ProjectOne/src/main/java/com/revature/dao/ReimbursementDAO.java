@@ -12,4 +12,5 @@ public interface ReimbursementDAO {
 	public Reimbursement updateReimbursement() throws SQLException;
 	public void addReimbursement(Reimbursement form) throws SQLException;
 	public List<Reimbursement> getReimbursementByEmpID(int empId) throws SQLException;
+	public List<Reimbursement> getReimbursementByStatus() throws SQLException;
 }

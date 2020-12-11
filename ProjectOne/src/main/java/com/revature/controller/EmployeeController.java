@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,12 +19,21 @@ public class EmployeeController {
 	static EmployeeService eServ = new EmployeeService();
 	static EmployeeDAO edao = new EmployeeDAOImpl();
 
-	public static void getSessionEmployee(HttpServletRequest req, HttpServletResponse res)
-			throws JsonProcessingException, IOException {
-		Employee emp = (Employee) req.getSession().getAttribute("currentemp");
-		res.getWriter().write(new ObjectMapper().writeValueAsString(emp));
+	//employee session
+	public static void getSessionEmployee(HttpServletRequest req, HttpServletResponse res) throws JsonProcessingException, IOException {
+		HttpSession session = req.getSession();
+		int emp= (int) session.getAttribute("currentemp");
+		Employee empObj = eServ.getSessionEmployee(emp);
+		System.out.println("in employee controller");
+		System.out.println(empObj);
+		ObjectMapper om = new ObjectMapper ();
+		String empString = om.writeValueAsString(empObj);
+		String newString = "{\"employee\":" + empString + "}";
+		System.out.println(newString);
+		res.getWriter().write(newString);
 	}
 
+	//method to update employee information 
 	public static String updateEmployee(HttpServletRequest req) throws SQLException {
 		if (!req.getMethod().equals("POST")) {
 			return "resources/html/updateEmployeeProfile.html";

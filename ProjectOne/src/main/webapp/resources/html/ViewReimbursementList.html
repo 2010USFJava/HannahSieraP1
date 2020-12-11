@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>View Reimbursement</title>
+<link href="/ProjectOne/resources/html/profile.css" rel="stylesheet" />
+<link href="/projectOne/resources/html/signin.css" rel="stylesheet" />
+<script type="text/javascript" src="js/viewreimbursement.js"></script>
+</head>
+<body>
+	<form method="POST" action="/ProjectOne/ViewReimbursementList.change">
+		<div class="item">
+			<p>Enter Employee ID</p>
+			<input type="text" name="eid" required />
+		</div>
+		<div>
+			</div>
+		<button type="submit" href="/">Search Reimbursement</button>
+	</form>
+			<table border=1 id="reimTable">
+				<tr>
+					<th>Reimbursement ID</th>
+					<th>Employee ID</th>
+					<th>Event Date</th>
+					<th>Request Date</th>
+					<th>Location</th>
+					<th>Amount</th>
+					<th>Description</th>
+					<th>Event Type</th>
+					<th>Grade Type</th>
+					<th>Status</th>
+				<tr>
+	
+			</table>
+
+
+<a href="http://localhost:8080/ProjectOne/resources/html/profile.html">Back to Homepage</a>
+</body>
+</html>

@@ -43,5 +43,8 @@ public class EmployeeService {
 	public void updateEmployeePassword(String newPassword, int id) throws SQLException {
 		edao.updateEmployeePassword(newPassword, id);
 	}
+	public Employee getSessionEmployee(int empid) {
+		return edao.getEmployeeByID(empid);
+	}
 
 }

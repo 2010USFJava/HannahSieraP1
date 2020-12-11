@@ -10,7 +10,7 @@ function getEmployee() {
 		console.log("the ready state has changed");
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
 			let emp = JSON.parse(xhttp.responseText);
-			console.log(emp);
+			console.log(emp.employee.firstName);
 			loadEmployee(emp);
 		
 		}

@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,9 +35,9 @@ public class ViewReimbursementServlet extends HttpServlet {
 	         {  
 	        
 	             Connection conn = cf.getConnection();  
-	               
 	             Statement stmt = conn.createStatement();  
-	             ResultSet rs = stmt.executeQuery("select * from reimbursement");  
+	             ResultSet rs = stmt.executeQuery("SELECT * FROM reimbursement");  
+	          
 	             out.println("<table border=1 width=50% height=50%>");  
 	             out.println("<tr><th>Reimbursement ID</th><th>Employee ID</th><th>Event Date</th><th>Request Date</th><th>Location</th><th>Amount</th><th>Description</th><th>Event Type</th><th>Grade Type</th><th>Status</th><tr>");  
 	             while (rs.next()) 
@@ -52,13 +51,13 @@ public class ViewReimbursementServlet extends HttpServlet {
 	                 String g = rs.getString("description");
 	                 String h = rs.getString("event_type");
 	                 String i = rs.getString("grade_type");
-	                 Boolean j = rs.getBoolean("status");
+	                 String j = rs.getString("status");
 	                 out.println("<tr><td>" + a + "</td><td>" + b + "</td><td>" + c + "</td><td>" + d + "</td><td>" + e + "</td><td>"+ f +"</td><td>" + g +"</td><td>"+ h +"</td><td>"+ i +"</td><td>" + j +"</td></tr>");   
 	             }  
 	             out.println("</table>");  
 	             out.println("<div>");
 
-	             out.println("<a href=\"http://localhost:8080/ProjectOne/resources/html/profile.html\"> Back </a>");
+	             out.println("<a href=\"http://localhost:8080/ProjectOne/resources/html/managerhomepage.html\"> Back </a>");
 	             out.println("</div>");
 	             out.println("</html></body>");
 	             

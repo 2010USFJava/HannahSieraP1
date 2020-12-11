@@ -12,7 +12,10 @@ import com.revature.model.Reimbursement;
 import com.revature.util.ConnFactory;
 
 public class ReimbursementDAOImpl implements ReimbursementDAO {
+	
 	public static ConnFactory cf = ConnFactory.getInstance();
+	
+	
 	@Override
 	public Reimbursement getReimbursementByID(int id) throws SQLException {
 		Reimbursement form = new Reimbursement();
@@ -30,7 +33,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 				form.setAmount(rs.getInt(5));
 				form.setDescription(rs.getString(6));
 				form.setEventType(rs.getString(7));
-				form.setStatus(rs.getBoolean(8));
+				form.setStatus(rs.getString(8));
 					
 			}
 				
@@ -79,7 +82,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 			ps.setString(6, form.getDescription());
 			ps.setString(7, form.getEventType());
 			ps.setString(8, form.getGradeType());
-			ps.setBoolean(9, form.isStatus());
+			ps.setString(9, form.getStatus());
 			
 			ps.execute();
 		}catch(SQLException e) {
@@ -94,6 +97,22 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 			Connection conn = cf.getConnection();
 			String sql = "SELECT * FROM reimbursement WHERE employee_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, empID);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				rList.add(new Reimbursement(rs.getInt(1), rs.getInt(2), rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(6),rs.getString(7),rs.getString(8),rs.getString(9), rs.getString(10), rs.getString(11), rs.getString(12), rs.getString(13)));
+		}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rList;
+	}
+	public List<Reimbursement> getReimbursementByStatus() throws SQLException {
+		List<Reimbursement> rList = new ArrayList<Reimbursement>();
+		try {
+			Connection conn = cf.getConnection();
+			String sql = "SELECT * FROM reimbursement WHERE status=pending";
+			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				rList.add(new Reimbursement());
@@ -103,7 +122,16 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 		}
 		return rList;
 	}
+	public void updateReimbursementGrade(int reimid, String grade) throws SQLException {
+		Connection conn=cf.getConnection();
+		String sql= "update reimbursement set grade_value =? where reimbursement_id=?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, reimid);
+		ps.setString(2, grade);
+		ps.executeUpdate();
 
+	
+	}
 
 
 }
