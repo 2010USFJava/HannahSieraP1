@@ -112,6 +112,10 @@ public class RequestHelper {
 		case "/ProjectOne/viewemployee.change":
 			return "/resources/html/viewemployee.html";
 			
+		case "/ProjectOne/viewManTest.change":
+			System.out.println("in view man");
+			return "/resources/html/viewManTest.html";
+			
 		default:
 			System.out.println("in default case");
 			return "resources/html/unsuccessfullogin.html";

@@ -37,6 +37,11 @@ public class JSONRequestHelper {
 			System.out.println("in view employees request helper");
 			EmployeeController.viewEmployee(req, res);
 			break;
+			
+		case "/ProjectOne/viewMan.json":
+			System.out.println("in view employees request helper");
+			ManagerController.viewManager(req, res);
+			break;
 
 		case "/ProjectOne/getmsession.json":
 			ManagerController.getSessionManager(req, res);
