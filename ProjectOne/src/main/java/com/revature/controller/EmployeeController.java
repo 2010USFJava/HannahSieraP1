@@ -1,10 +1,12 @@
 package com.revature.controller;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -13,14 +15,16 @@ import com.revature.dao.EmployeeDAO;
 import com.revature.daoimpl.EmployeeDAOImpl;
 import com.revature.model.Employee;
 import com.revature.service.EmployeeService;
+import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class EmployeeController {
 
 	static EmployeeDAO edao = new EmployeeDAOImpl();
-	
 	static EmployeeService eServ = new EmployeeService();
+	
 	public static void getSessionEmployee(HttpServletRequest req, HttpServletResponse res) throws JsonProcessingException, IOException {
 		Employee emp = (Employee) req.getSession().getAttribute("currentemp");
 			res.getWriter().write(new ObjectMapper().writeValueAsString(emp));
@@ -53,15 +57,24 @@ public class EmployeeController {
 			edao.updateEmployeeUsername(username, id);
 		} 
 		if (password != null){
-			edao.updateEmployeePassword(password, id);
-		
+			edao.updateEmployeePassword(password, id);	
 		}
 		
 		return "updatesuccess.change";
 
-		
-		
 		}
+	public static void viewEmployee(HttpServletRequest req, HttpServletResponse res) throws SQLException, JsonGenerationException, JsonMappingException, IOException {
+		List<Employee> employees = new ArrayList<Employee>();
+		employees = edao.getEmployees();
+		System.out.println(employees);
+		System.out.println("getting employees");
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.writeValue(out, employees);
+		byte [] data = out.toByteArray();
+		System.out.println(new String(data));
+		res.getWriter().write(new String(data));
+	}
 }
 
 

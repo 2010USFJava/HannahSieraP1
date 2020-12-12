@@ -41,13 +41,45 @@ public class ReimbursementController {
 		String eventType = req.getParameter("eventType");
 		String gradeType = req.getParameter("gradeType");
 		Integer intAmount = Integer.valueOf(amount);
-		//String status = Boolean.parseBoolean(req.getParameter("status"));
+		String passingGrade = req.getParameter("passingGrade");
 		
-		Reimbursement r = new Reimbursement(1, intempID, eventDate, requestDate, location, intAmount,
-				description, eventType, gradeType, "pending", "pending", "pending", "null");
-		
-		rdao.addReimbursement(r);
-		//rdao.withdraw());
+		if (eventType.equalsIgnoreCase("University courses")) {
+			intAmount = intAmount * (int) (0.80);
+			Reimbursement r = new Reimbursement(1, intempID, eventDate, requestDate, location, intAmount,
+					description, eventType, gradeType, "pending", "pending", "pending", "null", passingGrade);
+			rdao.addReimbursement(r);
+		}
+		if (eventType.equalsIgnoreCase("Seminars")) {
+			intAmount = intAmount * (int) (0.60);
+			Reimbursement r = new Reimbursement(1, intempID, eventDate, requestDate, location, intAmount,
+					description, eventType, gradeType, "pending", "pending", "pending", "null", passingGrade);
+			rdao.addReimbursement(r);
+		}
+		if (eventType.equalsIgnoreCase("Certificaton Preparation Classes")) {
+			intAmount = intAmount * (int) (0.75);
+			Reimbursement r = new Reimbursement(1, intempID, eventDate, requestDate, location, intAmount,
+					description, eventType, gradeType, "pending", "pending", "pending", "null", passingGrade);
+			rdao.addReimbursement(r);
+		}
+		if (eventType.equalsIgnoreCase("Certification")) {
+			intAmount = intAmount * 1;
+			Reimbursement r = new Reimbursement(1, intempID, eventDate, requestDate, location, intAmount,
+					description, eventType, gradeType, "pending", "pending", "pending", "null", passingGrade);
+			rdao.addReimbursement(r);
+		}
+		if (eventType.equalsIgnoreCase("Technical Training")) {
+			intAmount = intAmount * (int) (0.90);
+			Reimbursement r = new Reimbursement(1, intempID, eventDate, requestDate, location, intAmount,
+					description, eventType, gradeType, "pending", "pending", "pending", "null", passingGrade);
+			rdao.addReimbursement(r);
+		}
+		if (eventType.equalsIgnoreCase("Other")) {
+			intAmount = intAmount * (int) (0.30);
+			Reimbursement r = new Reimbursement(1, intempID, eventDate, requestDate, location, intAmount,
+					description, eventType, gradeType, "pending", "pending", "pending", "null", passingGrade);
+			rdao.addReimbursement(r);
+		}
+
 		return "sucessreimbursement.change";
 	}
 	
@@ -75,7 +107,7 @@ public class ReimbursementController {
 		 Integer intempID = Integer.valueOf(empID);
 		 String amount = req.getParameter("amount");
 		 Integer intAmount = Integer.valueOf(amount);
-
+		 
 		 edao.withdraw(intAmount, intempID);
 		 return "sucessreimbursement.change";
 	 }

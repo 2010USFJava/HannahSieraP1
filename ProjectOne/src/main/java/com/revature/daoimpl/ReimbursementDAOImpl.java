@@ -35,6 +35,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 				form.setStatusdepthead(rs.getString(9));
 				form.setStatusbenco(rs.getString(10));
 				form.setGradeValue(rs.getString(11));
+				form.setPassingGrade(rs.getString(12));
 				
 					
 			}
@@ -94,7 +95,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 	public void addReimbursement(Reimbursement form) throws SQLException {
 		try {
 			Connection conn = cf.getConnection();
-			String sql = "INSERT INTO reimbursement values(DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO reimbursement values(DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, form.getEmpID());
 			ps.setString(2, form.getEventDate());
@@ -108,6 +109,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 			ps.setString(10, form.getStatusdepthead());
 			ps.setString(11, form.getStatusbenco());
 			ps.setString(12, form.getGradeValue());
+			ps.setString(13, form.getPassingGrade());
 			
 			ps.execute();
 		}catch(SQLException e) {
@@ -168,6 +170,5 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 		System.out.println(amount);
 		}
 	}
-
 
 }

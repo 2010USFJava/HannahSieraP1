@@ -156,7 +156,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			}
 		}
 	}
-
+	
 	public void withdraw(double amount, int eid) throws SQLException {
 		Connection conn = cf.getConnection();
 		if (amount >= 1) {
@@ -193,11 +193,19 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 				Double balance = rs1.getDouble(1);
 				System.out.println(rs1.getDouble(1));
 				double modBalance = balance + amount;
+				if (modBalance >= 1000) {
+					String sql3 = "update employee set balance =? where emp_id=?;";
+					PreparedStatement ps3 = conn.prepareStatement(sql3);
+					ps3.setDouble(1, 1000);
+					ps3.setInt(2, empid);
+					ps3.executeUpdate();
+				}else {
 				String sql2 = "update employee set balance =? where emp_id=?;";
 				PreparedStatement ps2 = conn.prepareStatement(sql2);
 				ps2.setDouble(1, modBalance);
 				ps2.setInt(2, empid);
 				ps2.executeUpdate();
+				}
 			}
 		}
 	}

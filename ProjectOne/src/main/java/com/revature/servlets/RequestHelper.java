@@ -82,7 +82,7 @@ public class RequestHelper {
 			return "/resources/html/reupdatesuccess.html";
 			
 		case "/ProjectOne/updatereimbursement.change":
-			System.out.println("in success reupdatesuccess.change rhelper");
+			System.out.println("in update reimbursement.change rhelper");
 			return "/resources/html/updatereimbursement.html";
 			
 		case "/ProjectOne/reupdateemp.change":
@@ -91,9 +91,9 @@ public class RequestHelper {
 			ReimbursementController.updateReimbursementDescription(req);
 			return "/resources/html/reupdateemp.html";
 		
-		case "/ProjectOne/deptheadUpdaetForm.change":
+		case "/ProjectOne/deptheadUpdateForm.change":
 			System.out.println("In depthead update form");
-			return "/resources/html/detpheadUpdateForm.html";
+			return "/resources/html/deptheadUpdateForm.html";
 			
 		case "/ProjectOne/reupdatesuccessdepth.change":
 			System.out.println("In re upate success depthead.change");
@@ -108,6 +108,9 @@ public class RequestHelper {
 			ReimbursementController.updateReimbursementStatus3(req);
 			ReimbursementController.updateReimbursementAmount(req);
 			return "/resources/html/reupdatesuccessbenco.html";
+			
+		case "/ProjectOne/viewemployee.change":
+			return "/resources/html/viewemployee.html";
 			
 		default:
 			System.out.println("in default case");

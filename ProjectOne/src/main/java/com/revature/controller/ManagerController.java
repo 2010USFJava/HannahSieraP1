@@ -11,7 +11,7 @@ import com.revature.model.Manager;
 
 public class ManagerController {
 
-	public static void getSessionEmployee(HttpServletRequest req, HttpServletResponse res) throws JsonProcessingException, IOException {
+	public static void getSessionManager(HttpServletRequest req, HttpServletResponse res) throws JsonProcessingException, IOException {
 		Manager man = (Manager) req.getSession().getAttribute("currentman");
 			res.getWriter().write(new ObjectMapper().writeValueAsString(man));
 	}

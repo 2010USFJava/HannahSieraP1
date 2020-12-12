@@ -17,6 +17,7 @@ public class Reimbursement {
 	public String statusdepthead;
 	public String statusbenco;
 	public String gradeValue;
+	public String passingGrade;
 	
 	public Reimbursement() {
 		super();
@@ -24,7 +25,7 @@ public class Reimbursement {
 	}
 
 	public Reimbursement(int formID, int empID, String eventDate, String requestDate, String location, int amount,
-			String description, String eventType, String gradeType, String status, String statusdepthead, String statusbenco, String gradeValue) {
+			String description, String eventType, String gradeType, String status, String statusdepthead, String statusbenco, String gradeValue, String passingGrade) {
 		super();
 		this.formID = formID;
 		this.empID = empID;
@@ -39,6 +40,7 @@ public class Reimbursement {
 		this.statusdepthead = statusdepthead;
 		this.statusbenco = statusbenco;
 		this.gradeValue = gradeValue;
+		this.passingGrade = passingGrade;
 	}
 
 	public int getFormID() {
@@ -144,13 +146,23 @@ public class Reimbursement {
 	public void setGradeValue(String gradeValue) {
 		this.gradeValue = gradeValue;
 	}
+	
+
+	public String getPassingGrade() {
+		return passingGrade;
+	}
+
+	public void setPassingGrade(String passingGrade) {
+		this.passingGrade = passingGrade;
+	}
 
 	@Override
 	public String toString() {
 		return "Reimbursement [formID=" + formID + ", empID=" + empID + ", eventDate=" + eventDate + ", requestDate="
 				+ requestDate + ", location=" + location + ", amount=" + amount + ", description=" + description
 				+ ", eventType=" + eventType + ", gradeType=" + gradeType + ", status=" + status + ", statusdepthead="
-				+ statusdepthead + ", statusbenco=" + statusbenco + ", gradeValue=" + gradeValue + "]";
+				+ statusdepthead + ", statusbenco=" + statusbenco + ", gradeValue=" + gradeValue + ", passingGrade="
+				+ passingGrade + "]";
 	}
 	
 }

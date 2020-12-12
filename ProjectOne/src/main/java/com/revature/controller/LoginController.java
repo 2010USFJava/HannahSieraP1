@@ -24,7 +24,7 @@ public class LoginController {
 			return "wrongcreds.change";
 			
 		} else {
-			req.getSession().setAttribute("currentemp", emp); //emp.getEmpID()
+			req.getSession().setAttribute("currentemp", emp.getEmpID());
 			return "profile.change";
 		}
 	}
