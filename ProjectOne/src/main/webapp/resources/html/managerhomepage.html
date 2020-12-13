@@ -51,44 +51,29 @@
               
             </div>
         </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Employees</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                </div>
-                
-					<div class="text-center mt-4">
-				<form action="/ProjectOne/viewemployee.change">
+ 		<section class="page-section portfolio" id="portfolio">
+		<div class="container">
+			<!-- Portfolio Section Heading-->
+			<h2
+				class="page-section-heading text-center text-uppercase text-secondary mb-0">Employees</h2>
+			<!-- Icon Divider-->
+			<div class="divider-custom">
+				<div class="divider-custom-line"></div>
+				<div class="divider-custom-icon">
+					<i class="fas fa-star"></i>
+				</div>
+				<div class="divider-custom-line"></div>
+			</div>
+			<div class="text-center mt-4">
+	<form action="http://localhost:8080/ProjectOne/resources/html/viewemployee.html">
 					<div class="container">
-						<button class="btn btn-xl btn-outline-light" type='submit'
+						<button class="btn btn-xl btn-outline-dark" type='submit'
 							id="reimbursementCreate">View Employees</button>
 					</div>
 					<div class='container' id='submitoccurred'></div>
 				</form>
-
-			</div>
-			<div class="text-center mt-4">
-				<form action="/ProjectOne/viewManTest.change">
-					<div class="container">
-						<button class="btn btn-xl btn-outline-light" type='submit'
-							id="reimbursementCreate">View Managers</button>
-					</div>
-					<div class='container' id='submitoccurred'></div>
-				</form>
-
-			</div>
-					<div class='container' id='submitoccurred'></div>
-				</form>
-
-			</div>
-        </section>
+				</div>
+	</section>
         <!-- About Section-->
         <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
@@ -104,10 +89,10 @@
                 
                 <!-- Reimbursement Button-->
                <div class="text-center mt-4">
-				<form action="/ProjectOne/viewreimbursement.change">
+				<form action="http://localhost:8080/ProjectOne/resources/html/viewreimbursements.html">
 					<div class="container">
 						<button class="btn btn-xl btn-outline-light" type='submit'
-							id="reimbursementCreate">View Reimbursements
+							id="reimbursementCreate">View Requests
 							</button>
 					</div>
 					<div class='container' id='submitoccurred'></div>
@@ -118,7 +103,7 @@
 				<form action="/ProjectOne/managerUpdateForm.change">
 					<div class="container">
 						<button class="btn btn-xl btn-outline-light" type='submit'
-							id="reimbursementCreate">Approve or Deny pending reimbursements</button>
+							id="reimbursementCreate">Approve or Deny Pending Requests</button>
 					</div>
 					<div class='container' id='submitoccurred'></div>
 				</form>

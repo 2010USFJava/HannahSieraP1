@@ -14,6 +14,7 @@ public class Employee implements Serializable {
 	public String password;
 	public int empID;
 	public double balance;
+	public String email;
 	
 	
 	public Employee() {
@@ -57,12 +58,23 @@ public class Employee implements Serializable {
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
+	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 	@Override
 	public String toString() {
 		return "Employee [firstName=" + firstName + ", lastName=" + lastName + ", username=" + username + ", password="
-				+ password + ", empID=" + empID + "]";
+				+ password + ", empID=" + empID + ", balance=" + balance + ", email=" + email + "]";
 	}
-	public Employee(String firstName, String lastName, String username, String password, int empID, double balance) {
+
+	public Employee(String firstName, String lastName, String username, String password, int empID, double balance, String email) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -70,6 +82,7 @@ public class Employee implements Serializable {
 		this.password = password;
 		this.empID = empID;
 		this.balance = balance;
+		this.email = email;
 	}
 	
 

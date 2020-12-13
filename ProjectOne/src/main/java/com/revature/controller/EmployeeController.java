@@ -12,8 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.revature.dao.EmployeeDAO;
+import com.revature.dao.ReimbursementDAO;
 import com.revature.daoimpl.EmployeeDAOImpl;
+import com.revature.daoimpl.ReimbursementDAOImpl;
 import com.revature.model.Employee;
+import com.revature.model.Reimbursement;
 import com.revature.service.EmployeeService;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -24,6 +27,7 @@ public class EmployeeController {
 
 	static EmployeeDAO edao = new EmployeeDAOImpl();
 	static EmployeeService eServ = new EmployeeService();
+	static ReimbursementDAO rdao = new ReimbursementDAOImpl();
 	
 	public static void getSessionEmployee(HttpServletRequest req, HttpServletResponse res) throws JsonProcessingException, IOException {
 		Employee emp = (Employee) req.getSession().getAttribute("currentemp");
@@ -71,6 +75,22 @@ public class EmployeeController {
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.writeValue(out, employees);
+		byte [] data = out.toByteArray();
+		System.out.println(new String(data));
+		res.getWriter().write(new String(data));
+	}
+	public static void viewReimbursementById(HttpServletRequest req, HttpServletResponse res) throws SQLException, JsonGenerationException, JsonMappingException, IOException {
+		HttpSession session = req.getSession();
+		int emp= (int) session.getAttribute("currentemp");
+		System.out.println("in view by id");
+		System.out.println(emp);	
+		List<Reimbursement> reimbursement = new ArrayList<Reimbursement>();
+		reimbursement = rdao.getReimbursementByEmpID(emp);
+		System.out.println(reimbursement);
+		System.out.println("getting reimbursements");
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.writeValue(out, reimbursement);
 		byte [] data = out.toByteArray();
 		System.out.println(new String(data));
 		res.getWriter().write(new String(data));

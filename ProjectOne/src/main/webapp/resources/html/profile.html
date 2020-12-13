@@ -72,7 +72,12 @@
 			<!-- Masthead Subheading-->
 			<p class="masthead-subheading font-weight-light mb-0">It's not a
 				bug, it's a feature</p>
-		</div>
+			<div class="row">
+		<h2 class="m-5">
+			Hello, <span id="empName" class="text"></span>
+			You have <span class="text-warning">$</span><span id="amt" class="text-warning"></span> remaining for reimbursements.
+		</h2>
+	</div>
 	</header>
 
 	<!-- Porfile Section-->
@@ -124,11 +129,11 @@
 			</div>
 			<!-- Submit Reimbursement Button-->
 			<div class="text-center mt-4">
-				<form action="/ProjectOne/viewreimbursement.change">
+				<form action="http://localhost:8080/ProjectOne/resources/html/employeeview.html"> <!--  but for their own requests -->
 					<div class="container">
 						<button class="btn btn-xl btn-outline-light" type='submit'
 							id="reimbursementCreate">View Reimbursement
-							Request</button>
+							Requests</button>
 					</div>
 					<div class='container' id='submitoccurred'></div>
 				</form>

@@ -23,10 +23,6 @@ public class JSONRequestHelper {
 //			EmployeeController.getSessionEmployee(req, res);
 //			break;
 
-		case "/ProjectOne/reimbursement.json":
-			System.out.println("in reimbursement.json helper");
-			ReimbursementController.getReimbursement(req);
-			break;
 
 		case "/ProjectOne/getsession.json":
 			System.out.println("in getsession.json request helper ");
@@ -38,17 +34,22 @@ public class JSONRequestHelper {
 			EmployeeController.viewEmployee(req, res);
 			break;
 			
-		case "/ProjectOne/viewMan.json":
-			System.out.println("in view employees request helper");
-			ManagerController.viewManager(req, res);
+		case "/ProjectOne/viewreimbursements.json":
+			System.out.println("in view reimbursements request helper");
+			ReimbursementController.viewReimbursement(req, res);
 			break;
 
+		case "/ProjectOne/employeeview.json":
+			System.out.println("in view reimbursements request helper");
+			EmployeeController.viewReimbursementById(req, res);
+			break;
+			
 		case "/ProjectOne/getmsession.json":
 			ManagerController.getSessionManager(req, res);
 			break;
 
 		default:
-			Employee emp = new Employee("?", "?", "?", "?", 0, 0);
+			Employee emp = new Employee("?", "?", "?", "?", 0, 0, "?");
 			res.getWriter().write(new ObjectMapper().writeValueAsString(emp));
 
 		}

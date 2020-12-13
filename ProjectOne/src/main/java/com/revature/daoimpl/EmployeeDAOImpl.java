@@ -37,6 +37,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 				emp.setUsername(rs.getString(3));
 				emp.setPassword(rs.getString(4));
 				emp.setEmpID(rs.getInt(5));
+				emp.setBalance(rs.getDouble(6));
+				emp.setEmail(rs.getString(7));
 
 			}
 
@@ -58,7 +60,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				eList.add(new Employee(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5),
-						rs.getDouble(6)));
+						rs.getDouble(6), rs.getString(7)));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -68,6 +70,9 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public void updateEmployeeUsername(String newUsername, int id) throws SQLException {
+		if(newUsername.equalsIgnoreCase("")) {
+		System.out.println("nothing");
+		}else {
 		Connection conn = cf.getConnection();
 		String sql = "update employee set username =? where emp_id=?;";
 		PreparedStatement ps = conn.prepareStatement(sql);
@@ -76,10 +81,13 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		ps.executeUpdate();
 		// LogThis.LogIt("info", " A customer has an updated password: " +
 		// a.getPassword());
-
+		}
 	}
 
 	public void updateEmployeePassword(String newPassword, int id) throws SQLException {
+		if(newPassword.equalsIgnoreCase("")) {
+			System.out.println("nothing");
+		}else {
 		Connection conn = cf.getConnection();
 		String sql = "update employee set username =? where emp_id=?;";
 		PreparedStatement ps = conn.prepareStatement(sql);
@@ -88,7 +96,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		ps.executeUpdate();
 		// LogThis.LogIt("info", " A customer has an updated password: " +
 		// a.getPassword());
-
+		}
 	}
 
 	public void addEmployee(Employee emp) {
@@ -120,6 +128,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 				emp.setUsername(rs.getString(3));
 				emp.setPassword(rs.getString(4));
 				emp.setEmpID(rs.getInt(5));
+				emp.setBalance(rs.getDouble(6));
+				emp.setEmail(rs.getString(7));
 
 			}
 

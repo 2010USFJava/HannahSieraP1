@@ -49,21 +49,27 @@
                   </div>
         </header>
         <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Employees</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Grid Items-->
-               
-                </div>
-            
-        </section>
+       <!-- Portfolio Section Heading-->
+			<h2
+				class="page-section-heading text-center text-uppercase text-secondary mb-0">Employees</h2>
+			<!-- Icon Divider-->
+			<div class="divider-custom">
+				<div class="divider-custom-line"></div>
+				<div class="divider-custom-icon">
+					<i class="fas fa-star"></i>
+				</div>
+				<div class="divider-custom-line"></div>
+			</div>
+			<div class="text-center mt-4">
+	<form action="http://localhost:8080/ProjectOne/resources/html/viewemployee2.html">
+					<div class="container">
+						<button class="btn btn-xl btn-outline-dark" type='submit'
+							id="reimbursementCreate">View Employees</button>
+					</div>
+					<div class='container' id='submitoccurred'></div>
+				</form>
+				</div>
+	</section>
         <!-- About Section-->
         <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
@@ -76,12 +82,13 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- About Section Content-->
+                
                 <!-- Reimbursement Button-->
                <div class="text-center mt-4">
-				<form action="/ProjectOne/viewreimbursement.change">
+				<form action="http://localhost:8080/ProjectOne/resources/html/viewreimbursements2.html">
 					<div class="container">
 						<button class="btn btn-xl btn-outline-light" type='submit'
-							id="reimbursementCreate">View Reimbursements
+							id="reimbursementCreate">View Requests
 							</button>
 					</div>
 					<div class='container' id='submitoccurred'></div>
@@ -92,7 +99,7 @@
 				<form action="/ProjectOne/deptheadUpdateForm.change">
 					<div class="container">
 						<button class="btn btn-xl btn-outline-light" type='submit'
-							id="reimbursementCreate">Approve or Deny pending reimbursements</button>
+							id="reimbursementCreate">Approve or Deny Pending Requests</button>
 					</div>
 					<div class='container' id='submitoccurred'></div>
 				</form>
@@ -128,7 +135,7 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="" />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -162,7 +169,7 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="" />
                                     <!-- Portfolio Modal - Text-->
-                                
+                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -230,7 +237,7 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="" />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                   
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -264,7 +271,7 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="" />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -298,7 +305,7 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="" />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                   
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -319,6 +326,6 @@
         <script src="assets/mail/jqBootstrapValidation.js"></script>
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script type="text/javascript" src="resources/js/managerhome.js"></script>
     </body>
 </html>

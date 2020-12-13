@@ -1,3 +1,6 @@
+/**
+ * 
+ */
  /**
  * 
  */
@@ -18,7 +21,7 @@ function getReimbursements(){
 		}
 	}
 	
-	xhr.open("GET", "/ProjectOne/viewreimbursements.json", true);
+	xhr.open("GET", "/ProjectOne/employeeview.json", true);
 	xhr.setRequestHeader("Content-Type", "application/json");
 	
 	xhr.send();
