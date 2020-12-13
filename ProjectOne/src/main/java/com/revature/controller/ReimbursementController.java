@@ -45,12 +45,13 @@ public class ReimbursementController {
 		String description = req.getParameter("description");
 		String eventType = req.getParameter("eventType");
 		String gradeType = req.getParameter("gradeType");
-		Integer intAmount = Integer.valueOf(amount);
+		Double intAmount = Double.valueOf(amount);
 		String passingGrade = req.getParameter("passingGrade");
+		String urgent = req.getParameter("urgent");
 		//String status = Boolean.parseBoolean(req.getParameter("status"));
 		
 		Reimbursement r = new Reimbursement(1, intempID, eventDate, requestDate, location, intAmount,
-				description, eventType, gradeType, "pending", "pending", "pending", "--", passingGrade, "--");
+				description, eventType, gradeType, "pending", "pending", "pending", "--", passingGrade, urgent);
 		
 		rdao.addReimbursement(r);
 
@@ -158,7 +159,7 @@ public class ReimbursementController {
 		 String empID = req.getParameter("empID");
 		 Integer intempID = Integer.valueOf(empID);
 		 String amount = req.getParameter("amount");
-		 Integer intAmount = Integer.valueOf(amount);
+		 Double intAmount = Double.valueOf(amount);
 		 
 		 edao.withdraw(intAmount, intempID);
 		 return "sucessreimbursement.change";
@@ -252,8 +253,13 @@ public class ReimbursementController {
 		 String reID = req.getParameter("reID");
 		 Integer intreID = Integer.valueOf(reID);
 		 String amount = req.getParameter("amount");
-		 Integer intAmount = Integer.valueOf(amount);
+		 if (amount==null) {
+			 System.out.println("nothing");
+		 }else {
+		 Double intAmount = Double.valueOf(amount);
 		 rdao.updateReimbursementAmount(intAmount, intreID);
+		 return "reupdatesuccessbenco.html";
+		 }
 		 return "reupdatesuccessbenco.html";
 			 
 	 }

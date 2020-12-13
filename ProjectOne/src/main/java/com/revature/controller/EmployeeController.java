@@ -48,25 +48,25 @@ public class EmployeeController {
 	}
 	
 	public static String updateEmployee(HttpServletRequest req) throws SQLException {
-		if (!req.getMethod().equals("POST")) {
-			return "resources/html/updateEmployeeProfile.html";
-		}
-		
-		String username = req.getParameter("username");
-		String password = req.getParameter("password");
-		String eid = req.getParameter("eid");
-		Integer id = Integer.valueOf(eid);
-		
-		if (username != null) {
-			edao.updateEmployeeUsername(username, id);
-		} 
-		if (password != null){
-			edao.updateEmployeePassword(password, id);	
-		}
-		
-		return "updatesuccess.change";
+        if (!req.getMethod().equals("POST")) {
+            return "resources/html/updateEmployeeProfile.html";
+        }
 
-		}
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        String eid = req.getParameter("eid");
+        Integer id = Integer.valueOf(eid);
+
+        if (username != null) {
+            edao.updateEmployeeUsername(username, id);
+        } 
+        if (password != null){
+            edao.updateEmployeePassword(password, id);
+        }
+
+        return "updatesuccess.change";
+
+        }
 	public static void viewEmployee(HttpServletRequest req, HttpServletResponse res) throws SQLException, JsonGenerationException, JsonMappingException, IOException {
 		List<Employee> employees = new ArrayList<Employee>();
 		employees = edao.getEmployees();

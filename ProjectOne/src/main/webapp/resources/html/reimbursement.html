@@ -280,25 +280,30 @@ button:hover {
 				</p>
 				<input type="text" name="location" required />
 			</div>
-			<div class="item">
-				<p>
-					Amount<span class="required">*</span>
-				</p>
-				<div class="city-item">
-					<input id="amount1"  type="text" name="amount1" placeholder="Amount" required
-						min="0.00" max="1000.00" /> 
-					<input type="text" name="amount" readonly id="auto" />
-						<select name="eventType" id="eventType" required>
-						<option value="">Event Type</option>
-						<option value="University Courses">University Courses</option>
-						<option value="Seminars">Seminars</option>
-						<option value="Certification Preparation Classes">Certification
-							Preparation Classes</option>
-						<option value="Certification">Certification</option>
-						<option value="Techical Training">Technical Training</option>
-						<option value="Other">Other</option>
-					</select>
-				</div>
+				<div class="form-group">
+                        <label for="cost">Amount:</label> 
+                        <input type="text" class="form-control" id="amount1" 
+                        name="amount1" placeholder="Amount" required="required">
+                    </div>
+  
+  					<div>
+                        <label for="eventType">Event Type:</label>
+                         <select class="form-control" id="eventType" name="eventType" 
+                         required="required" onchange="changeAmount();">
+                            <option value="0">Event Type</option>
+							<option value="University Courses">University Courses</option>
+							<option value="Seminars">Seminars</option>
+							<option value="Certification Preparation">Certification Preparation Classes</option>
+							<option value="Certification">Certification</option>
+							<option value="Technical Training">Technical Training</option>
+							<option value="Other">Other</option>
+						</select>
+                    </div>
+                    <div class="form-group">
+                        <label for="reimburse">Adjusted Amount</label> 
+                        <input	class="form-control" type="text" id="amount" 
+                        name="amount" value="" placeholder="Adjusted Amount" readonly>
+                    </div>
 			</div>
 			<div class="item">
 				<p>
@@ -328,7 +333,7 @@ button:hover {
 			<label onclick="isUrgent()">Click here to determine urgency</label>
 				<p>Select Urgent</p>
 				<select name="urgent">
-					<option value="false">Default</option>
+					<option value="--">Default</option>
 					<option value="URGENT">URGENT!</option>
 				
 				</select>

@@ -35,7 +35,7 @@ function loadEmployees(employee){
 	for(let i = 0; i < tableLength; i++){
 		
 		
-		msg1 += '<tr><td>' + `${employee[i].firstName}` + '</td><td>' + ` ${employee[i].LastName}` + '</td><td>' + ` ${employee[i].username}` + '</td><td>' + ` ${employee[i].password}` + '</td><td>' + `${employee[i].empID}` + '</td><td>' + ` ${employee[i].balance}` + '</td><td>' + ` ${employee[i].email}` + '</td></tr>';
+		msg1 += '<tr><td>' + `${employee[i].firstName}` + '</td><td>' + `${employee[i].lastName}` + '</td><td>' + ` ${employee[i].username}` + '</td><td>' + ` ${employee[i].password}` + '</td><td>' + `${employee[i].empID}` + '</td><td>' + ` ${employee[i].balance}` + '</td><td>' + ` ${employee[i].email}` + '</td></tr>';
 		console.log("emp_table.js : loadEmployeesTableOne() Table 1 : i : " + i);
 	}
 	document.getElementById("tableData").innerHTML = msg1;

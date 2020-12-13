@@ -28,7 +28,7 @@ static ManagerService mServ = new ManagerService();
 	
 	public static String login2(HttpServletRequest req) {
 		if(!req.getMethod().equals("POST")) {
-			return "resources/html/managerlogin.html";
+			return "resources/html/deptheadlogin.html";
 			
 		}
 		String username = req.getParameter("username");
@@ -45,7 +45,7 @@ static ManagerService mServ = new ManagerService();
 	
 	public static String login3(HttpServletRequest req) {
 		if(!req.getMethod().equals("POST")) {
-			return "resources/html/managerlogin.html";
+			return "resources/html/bencologin.html";
 			
 		}
 		String username = req.getParameter("username");

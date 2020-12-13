@@ -131,7 +131,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 			ps.setString(2, form.getEventDate());
 			ps.setString(3, form.getRequestDate());
 			ps.setString(4, form.getLocation());
-			ps.setInt(5, form.getAmount());
+			ps.setDouble(5, form.getAmount());
 			ps.setString(6, form.getDescription());
 			ps.setString(7, form.getEventType());
 			ps.setString(8, form.getGradeType());
@@ -176,7 +176,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 	}
 
 	public void updateReimbursementAmount(double amount, int reID) throws SQLException {
-		if (amount == 0) { // (Double) null ) {
+		if (amount == 0) { 
 			System.out.println("nothing");
 		} else {
 			Connection conn = cf.getConnection();

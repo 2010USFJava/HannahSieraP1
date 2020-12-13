@@ -89,7 +89,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			System.out.println("nothing");
 		}else {
 		Connection conn = cf.getConnection();
-		String sql = "update employee set username =? where emp_id=?;";
+		String sql = "update employee set password =? where emp_id=?;";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, newPassword);
 		ps.setInt(2, id);

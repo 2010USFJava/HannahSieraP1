@@ -9,7 +9,7 @@ public class Reimbursement {
 	public String eventDate;
 	public String requestDate;
 	public String location;
-	public int amount;
+	public double amount;
 	public String description;
 	public String eventType;
 	public String gradeType;
@@ -25,7 +25,7 @@ public class Reimbursement {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Reimbursement(int formID, int empID, String eventDate, String requestDate, String location, int amount,
+	public Reimbursement(int formID, int empID, String eventDate, String requestDate, String location, double amount,
 			String description, String eventType, String gradeType, String status, String statusdepthead, String statusbenco, String gradeValue, String passingGrade, String urgent) {
 		super();
 		this.formID = formID;
@@ -85,11 +85,11 @@ public class Reimbursement {
 		this.location = location;
 	}
 
-	public int getAmount() {
+	public double getAmount() {
 		return amount;
 	}
 
-	public void setAmount(int amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
 
