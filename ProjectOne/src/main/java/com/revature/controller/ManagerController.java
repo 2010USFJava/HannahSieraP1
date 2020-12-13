@@ -22,14 +22,14 @@ public class ManagerController {
 
 	static ManagerDAO mdao = new ManagerDAOImpl();
 	
-	public static void getSessionManager(HttpServletRequest req, HttpServletResponse res) throws JsonProcessingException, IOException {
-		Manager man = (Manager) req.getSession().getAttribute("currentman");
-			res.getWriter().write(new ObjectMapper().writeValueAsString(man));
-	}
+//	public static void getSessionManager(HttpServletRequest req, HttpServletResponse res) throws JsonProcessingException, IOException {
+//		Manager man = (Manager) req.getSession().getAttribute("currentman");
+//			res.getWriter().write(new ObjectMapper().writeValueAsString(man));
+//	}
 //	public static String managerhome(HttpServletRequest req) {
 //		return "resources/html/managerhomepage.html";
 //	}
-	public static void viewManager(HttpServletRequest req, HttpServletResponse res) throws SQLException, JsonGenerationException, JsonMappingException, IOException {
+	public static void mangetSession(HttpServletRequest req, HttpServletResponse res) throws SQLException, JsonGenerationException, JsonMappingException, IOException {
 		List<Manager> manager = new ArrayList<Manager>();
 		manager = mdao.getManager();
 		System.out.println(manager);

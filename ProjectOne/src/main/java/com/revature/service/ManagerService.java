@@ -73,7 +73,7 @@ public class ManagerService {
 	
 	public Manager loginGetManager3(String username, String password){
 		
-		if(loginVerify(username,password)) {
+		if(loginVerify3(username,password)) {
 			return mdao.getManagerByUsername(username);
 		}
 		return null;

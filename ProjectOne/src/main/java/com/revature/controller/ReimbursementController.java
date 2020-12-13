@@ -56,7 +56,7 @@ public class ReimbursementController {
 
 		return "sucessreimbursement.change";
 	}
-	
+//	
 //	public static String addReimbursement(HttpServletRequest req) throws SQLException {
 //		if(!req.getMethod().equals("POST")) {
 //			return "resources/html/reimbursement.html";
@@ -79,7 +79,7 @@ public class ReimbursementController {
 //		//String status = Boolean.parseBoolean(req.getParameter("status"));
 //		
 //		switch (eventType) {
-//		case "University Courses":
+//		case "UniversityCourses":
 //			String amount = req.getParameter("amount");
 //			Integer intAmount = (Integer.valueOf(amount)) * (int) (0.80);
 //			Reimbursement r = new Reimbursement(1, intempID, eventDate, requestDate, location, intAmount,

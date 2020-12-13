@@ -45,7 +45,7 @@ public class JSONRequestHelper {
 			break;
 			
 		case "/ProjectOne/getmsession.json":
-			ManagerController.getSessionManager(req, res);
+			ManagerController.mangetSession(req, res);
 			break;
 
 		default:

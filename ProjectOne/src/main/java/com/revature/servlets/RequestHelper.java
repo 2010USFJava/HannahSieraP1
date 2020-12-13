@@ -26,11 +26,11 @@ public class RequestHelper {
 			return ManagerLoginController.login(req);
 			
 		case "/ProjectOne/deptheadlogin.change":
-			System.out.println("in managerlogin.change rhelper");
+			System.out.println("in depthead login.change rhelper");
 			return ManagerLoginController.login2(req);
 			
 		case "/ProjectOne/bencologin.change":
-			System.out.println("in managerlogin.change rhelper");
+			System.out.println("in benco login.change rhelper");
 			return ManagerLoginController.login3(req);
 
 		case "/ProjectOne/managerhomepage.change":

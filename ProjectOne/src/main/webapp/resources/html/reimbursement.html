@@ -285,8 +285,10 @@ button:hover {
 					Amount<span class="required">*</span>
 				</p>
 				<div class="city-item">
-					<input type="text" name="amount" placeholder="Amount" required
-						min="0.00" max="1000.00" /> <select name="eventType" required>
+					<input id="amount1"  type="text" name="amount1" placeholder="Amount" required
+						min="0.00" max="1000.00" /> 
+					<input type="text" name="amount" readonly id="auto" />
+						<select name="eventType" id="eventType" required>
 						<option value="">Event Type</option>
 						<option value="University Courses">University Courses</option>
 						<option value="Seminars">Seminars</option>
