@@ -7,7 +7,7 @@
 	rel="stylesheet">
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-	
+
 <style>
 html, body {
 	min-height: 100%;
@@ -54,8 +54,6 @@ form {
 .banner {
 	position: relative;
 	height: 210px;
-	background-image:
-		url("/uploads/media/default/0001/01/c43630149befa5c9559813f72e99bcb6bf149e62.jpeg");
 	background-size: cover;
 	display: flex;
 	justify-content: center;
@@ -132,7 +130,7 @@ input[type="date"]::-webkit-inner-spin-button {
 	cursor: pointer;
 }
 
-input[type=radio], input[type=checkbox] {
+input[type=radio] {
 	display: none;
 }
 
@@ -241,106 +239,116 @@ button:hover {
 	.city-item select {
 		width: calc(50% - 8px);
 	}
+	label {
+		display: block;
+		font: 1rem 'Fira Sans', sans-serif;
+	}
+	input, label {
+		margin: .4rem 0;
+	}
 }
 </style>
 </head>
 <body>
 	<div class="testbox">
-		<form method="POST" action="/ProjectOne/successreimbursement.change">
+		<form method="POST" type="submit" action="/ProjectOne/successreimbursement.change">
 			<div class="banner">
 				<h1>Reimbursement Form</h1>
 			</div>
 			<div class="item">
 				<p>Current Date</p>
-				<input type="text" name="requestDate" id="currentD"/>
+				<input id="today" type="date" name="requestDate">
+				</p>
 			</div>
-			<div class="item">
-				<p>Event Date</p>
-				<input type="date" name="eventDate" required /> <i
-					class="fas fa-calendar-alt"></i>
-			</div>
-			<h5>1. Employee Information:</h5>
 			<div class="item">
 				<p>
-					Employee ID<span class="required">*</span>
+					Event Date<span class="required">*</span>
+				<p>
+					<input type="date" id="eventDate" name="eventDate"> <span
+						id="date_7"></span>
+				
+				<h5>1. Employee Information:</h5>
+				<div class="item">
+					<p>
+						Employee ID<span class="required">*</span>
+					</p>
+					<input type="text" name="empID" required />
+				</div>
+
+				<p>
+					Location<span class="required">*</span>
 				</p>
-				<input type="text" name="empID" required />
+				<input type="text" name="location" required />
+			</div>
+			<div class="item">
+				<p>
+					Amount<span class="required">*</span>
+				</p>
+				<div class="city-item">
+					<input type="text" name="amount" placeholder="Amount" required
+						min="0.00" max="1000.00" /> <select name="eventType" required>
+						<option value="">Event Type</option>
+						<option value="University Courses">University Courses</option>
+						<option value="Seminars">Seminars</option>
+						<option value="Certification Preparation Classes">Certification
+							Preparation Classes</option>
+						<option value="Certification">Certification</option>
+						<option value="Techical Training">Technical Training</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+			</div>
+			<div class="item">
+				<p>
+					Description<span class="required">*</span>
+				</p>
+				<textarea rows="3" name="description" required></textarea>
+			</div>
+			<div class="item">
+				<p>
+					Grade Type<span class="required">*</span>
+				</p>
+				<select name="gradeType">
+					<option value="graded">Graded</option>
+					<option value="presentation">Presentation</option>
+				</select>
+			</div>
+			<div class="item">
+				<p>Select Grade Cutoff</p>
+				<select name="passingGrade">
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="Presentation">Presentation</option>
+				</select>
+			</div>
+			<div class="item">
+			<label onclick="isUrgent()">Click here to determine urgency</label>
+				<p>Select Urgent</p>
+				<select name="urgent">
+					<option value="false">Default</option>
+					<option value="URGENT">URGENT!</option>
+				
+				</select>
 			</div>
 
-			<p>
-				Location<span class="required">*</span>
-			</p>
-			<input type="text" name="location" required />
-	</div>
-	<div class="item">
-		<p>
-			Amount<span class="required">*</span>
-		</p>
-		<div class="city-item">
-			<input type="text" name="amount" placeholder="Amount" required min="0.00" max="1000.00"/> 
-			<select
-				name="eventType" required>
-				<option value="">Event Type</option>
-				<option value="University Courses">University Courses</option>
-				<option value="Seminars">Seminars</option>
-				<option value="Certification Preparation Classes">Certification
-					Preparation Classes</option>
-				<option value="Certification">Certification</option>
-				<option value="Techical Training">Technical Training</option>
-				<option value="Other">Other</option>
-			</select>
-		</div>
-	</div>
-	<div class="item">
-		<p>
-			Description<span class="required">*</span>
-		</p>
-		<textarea rows="3" name="description" required></textarea>
-	</div>
-	<div>
-		<p>
-			Grade Type:<span class="required">*</span>
-		</p>
-		<div class="question-answer">
-			<input type="radio" value="graded" id="radio_7" name="gradeType" /> <label
-				for="radio_7" class="radio"><span>Graded</span></label> <input
-				type="radio" value="presentation" id="radio_8" name="gradeType" /> <label
-				for="radio_8" class="radio"><span>Presentation</span></label>
-		</div>
-	</div>
-	<div class="item">
-			<p>Select Grade Cutoff</p>
-			<select name="passingGrade" >
-				<option value="A">A</option>
-				<option value="B">B</option>
-				<option value="C">C</option>
-				<option value="Presentation">Presentation</option>
-			</select>
-		</div>
-
-
-	<!-- <h5>For managers only:</h5>
-	<div class="question">
-		<p>Status:</p>
-		<div class="question-answer">
-			<input type="radio" value="none" id="radio_7" name="status" /> <label
-				for="radio_7" class="radio"><span>Approved</span></label> <input
-				type="radio" value="none" id="radio_8" name="status" /> <label
-				for="radio_8" class="radio"><span>Denied</span></label>
-		</div> -->
-
-	<br />
-	<div class="item">
-		<!-- <p>Form ID</p>
+			<br />
+			<div class="item">
+				<!-- <p>Form ID</p>
 			<input type="text" name="name" /> -->
+			</div>
+			<div class="btn-block">
+				
+				<label onclick="validateDate()">Click here to check form before submitting</label>
+				<button  type="submit" href="/">Submit
+					Reimbursement Request</button>
+
+			</div>
+		</form>
+
 	</div>
-	<div class="btn-block">
-		<button type="submit" href="/">Submit Reimbursement Request</button>
 	</div>
-	</form>
-	</div>
-	<script>
-		document.getElementById('currentD').valueAsDate = new Date();
-	</script>
+	<script type="text/javascript" src="resources/js/date.js"></script>
+	<script type="text/javascript" src="resources/js/datefunction.js"></script>
 </body>
 </html>

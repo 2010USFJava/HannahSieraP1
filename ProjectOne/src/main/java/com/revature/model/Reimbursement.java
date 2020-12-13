@@ -18,14 +18,14 @@ public class Reimbursement {
 	public String statusbenco;
 	public String gradeValue;
 	public String passingGrade;
-	
+	public String urgent;
 	public Reimbursement() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 	public Reimbursement(int formID, int empID, String eventDate, String requestDate, String location, int amount,
-			String description, String eventType, String gradeType, String status, String statusdepthead, String statusbenco, String gradeValue, String passingGrade) {
+			String description, String eventType, String gradeType, String status, String statusdepthead, String statusbenco, String gradeValue, String passingGrade, String urgent) {
 		super();
 		this.formID = formID;
 		this.empID = empID;
@@ -41,6 +41,7 @@ public class Reimbursement {
 		this.statusbenco = statusbenco;
 		this.gradeValue = gradeValue;
 		this.passingGrade = passingGrade;
+		this.urgent = urgent;
 	}
 
 	public int getFormID() {
@@ -154,6 +155,14 @@ public class Reimbursement {
 
 	public void setPassingGrade(String passingGrade) {
 		this.passingGrade = passingGrade;
+	}
+
+	public String isUrgent() {
+		return urgent;
+	}
+
+	public void setUrgent(String urgent) {
+		this.urgent = urgent;
 	}
 
 	@Override
