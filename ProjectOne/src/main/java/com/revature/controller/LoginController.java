@@ -3,6 +3,7 @@ package com.revature.controller;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.revature.model.Employee;
 import com.revature.service.EmployeeService;
@@ -24,9 +25,12 @@ public class LoginController {
 			return "wrongcreds.change";
 			
 		} else {
-			req.getSession().setAttribute("currentemp", emp.getEmpID());
+			HttpSession session = req.getSession();
+			session.setAttribute("activeemp", emp.getEmpID());
+			System.out.println();
 			return "profile.change";
 		}
 	}
+
 
 }
