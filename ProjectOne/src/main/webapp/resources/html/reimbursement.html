@@ -9,6 +9,8 @@
 	href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
 <style>
+
+
 html, body {
 	min-height: 100%;
 }
@@ -246,12 +248,21 @@ button:hover {
 	input, label {
 		margin: .4rem 0;
 	}
+	.bordered {
+    width: 100px;
+    height: 10px;
+    padding: 15px;
+    border: 3px solid lightblue;
+    border-radius: 8px;
+    background-color: lightblue;
+  }
 }
 </style>
 </head>
 <body>
 	<div class="testbox">
-		<form method="POST" type="submit" action="/ProjectOne/successreimbursement.change">
+		<form method="POST" type="submit"
+			action="/ProjectOne/successreimbursement.change">
 			<div class="banner">
 				<h1>Reimbursement Form</h1>
 			</div>
@@ -266,7 +277,6 @@ button:hover {
 				<p>
 					<input type="date" id="eventDate" name="eventDate"> <span
 						id="date_7"></span>
-				
 				<h5>1. Employee Information:</h5>
 				<div class="item">
 					<p>
@@ -280,31 +290,32 @@ button:hover {
 				</p>
 				<input type="text" name="location" required />
 			</div>
-				<div class="form-group">
-                        <label for="cost">Amount:</label> 
-                        <input type="text" class="form-control" id="amount1" 
-                        name="amount1" placeholder="Amount" required="required">
-                    </div>
-  
-  					<div>
-                        <label for="eventType">Event Type:</label>
-                         <select class="form-control" id="eventType" name="eventType" 
-                         required="required" onchange="changeAmount();">
-                            <option value="0">Event Type</option>
-							<option value="University Courses">University Courses</option>
-							<option value="Seminars">Seminars</option>
-							<option value="Certification Preparation">Certification Preparation Classes</option>
-							<option value="Certification">Certification</option>
-							<option value="Technical Training">Technical Training</option>
-							<option value="Other">Other</option>
-						</select>
-                    </div>
-                    <div class="form-group">
-                        <label for="reimburse">Adjusted Amount</label> 
-                        <input	class="form-control" type="text" id="amount" 
-                        name="amount" value="" placeholder="Adjusted Amount" readonly>
-                    </div>
+			<div class="form-group">
+				<label for="cost">Amount:</label> <input type="text"
+					class="form-control" id="amount1" name="amount1"
+					placeholder="Amount" required="required">
 			</div>
+
+			<div>
+				<label for="eventType">Event Type:</label> <select
+					class="form-control" id="eventType" name="eventType"
+					required="required" onchange="changeAmount();">
+					<option value="0">Event Type</option>
+					<option value="University Courses">University Courses</option>
+					<option value="Seminars">Seminars</option>
+					<option value="Certification Preparation">Certification
+						Preparation Classes</option>
+					<option value="Certification">Certification</option>
+					<option value="Technical Training">Technical Training</option>
+					<option value="Other">Other</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="reimburse">Adjusted Amount</label> <input
+					class="form-control" type="text" id="amount" name="amount" value=""
+					placeholder="Adjusted Amount" readonly>
+			</div>
+
 			<div class="item">
 				<p>
 					Description<span class="required">*</span>
@@ -330,12 +341,12 @@ button:hover {
 				</select>
 			</div>
 			<div class="item">
-			<label onclick="isUrgent()">Click here to determine urgency</label>
+				<label onclick="isUrgent()" style="color:black" class="bordered">Check Urgent</label>
 				<p>Select Urgent</p>
 				<select name="urgent">
 					<option value="--">Default</option>
 					<option value="URGENT">URGENT!</option>
-				
+
 				</select>
 			</div>
 
@@ -345,14 +356,15 @@ button:hover {
 			<input type="text" name="name" /> -->
 			</div>
 			<div class="btn-block">
-				
-				<label onclick="validateDate()">Click here to check form before submitting</label>
-				<button  type="submit" href="/">Submit
-					Reimbursement Request</button>
+
+				<label onclick="validateDate()" class="bordered"
+					style="color: black">Check Form</label>
+				<button type="submit" href="/">Submit Reimbursement Request</button>
 
 			</div>
 		</form>
-
+	</div>
+	</div>
 	</div>
 	<script type="text/javascript" src="resources/js/date.js"></script>
 	<script type="text/javascript" src="resources/js/datefunction.js"></script>
